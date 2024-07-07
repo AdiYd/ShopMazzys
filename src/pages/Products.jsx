@@ -51,7 +51,7 @@ const onAddToCartClick = (customerRequest)=>{
       <div className="p-4 flex flex-wrap gap-y-8 justify-around max-sm:p-8">
         {products?.map((product,indx) => (
           <ProductCard 
-          onClick={()=>{navigate(`/products/${product.title}`); setTimeout(()=>{scrollToSection()},200)}}
+          onClick={()=>{navigate(`/מוצרים/${product.title}`); setTimeout(()=>{scrollToSection()},200)}}
           onBtnClick={onAddToCartClick}
           key={indx}  
           productData={product} />

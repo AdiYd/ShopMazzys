@@ -1,85 +1,148 @@
-[
-    {
-      "title": "Our Agenda",
-      "description": "At RelaxWave, we believe in the power of relaxation to improve lives. Our agenda is simple yet profound:",
-      "items": [
-        {
-          "icon": "faHeart",
-          "title": "Enhance Well-being",
-          "text": "We strive to provide tools that help our clients find peace and tranquility in their daily lives.",
-          "color": "#E57373"
-        },
-        {
-          "icon": "faLightbulb",
-          "title": "Innovate Continuously",
-          "text": "We are committed to staying at the forefront of technology, ensuring our products are not only effective but also cutting-edge.",
-          "color": "#FFD54F"
-        },
-        {
-          "icon": "faGlobe",
-          "title": "Global Reach",
-          "text": "Our products are designed to cater to diverse needs and are accessible to people worldwide.",
-          "color": "#4FC3F7"
-        }
-      ]
-    },
-    {
-      "title": "Transforming Lives Globally",
-      "description": "RelaxWave has touched the lives of countless individuals across the globe. Our products are crafted to deliver unparalleled relaxation, promoting mental clarity, reduced stress, and overall well-being. Here’s how we’ve made a difference:",
-      "items": [
-        {
-          "icon": "faSpa",
-          "title": "Stress Reduction",
-          "text": "Our innovative relaxation devices help alleviate stress, allowing users to unwind and recharge.",
-          "color": "#81C784"
-        },
-        {
-          "icon": "faBed",
-          "title": "Improved Sleep",
-          "text": "Many of our clients have reported better sleep quality, thanks to our soothing products.",
-          "color": "#BA68C8"
-        },
-        {
-          "icon": "faBrain",
-          "title": "Improved Focus",
-          "text": "By promoting relaxation, our products help improve concentration and productivity.",
-          "color": "#FF8A65"
-        },
-        {
-          "icon": "faLeaf",
-          "title": "Holistic Wellness",
-          "text": "We offer a range of solutions that cater to both physical and mental well-being, ensuring a comprehensive approach to relaxation.",
-          "color": "#AED581"
-        }
-      ]
-    },
-    {
-      "title": "Environmental Responsibility",
-      "description": "At RelaxWave, we take our responsibility to the environment seriously. We are committed to minimizing the use of non-recyclable materials in our products and packaging. Our manufacturing processes are designed to reduce waste and promote sustainability.",
-      "additionalText": "We worship the earth and seek to make it a better place to live in. By choosing eco-friendly materials and sustainable practices, we aim to reduce our carbon footprint and inspire others to do the same. Join us in our mission to protect the planet for future generations."
-    },
-    {
-      "title": "Why Choose RelaxWave?",
-      "items": [
-        {
-          "icon": "faStar",
-          "title": "Top-Quality Products",
-          "text": "Each product is meticulously designed and tested to meet the highest standards of quality and effectiveness.",
-          "color": "#FFD700"
-        },
-        {
-          "icon": "faSmile",
-          "title": "Customer Satisfaction",
-          "text": "Our commitment to customer satisfaction is unwavering, and we go the extra mile to ensure our clients are happy.",
-          "color": "#FFEB3B"
-        },
-        {
-          "icon": "faRecycle",
-          "title": "Sustainable Practices",
-          "text": "We are dedicated to sustainability, ensuring our products and processes are environmentally friendly.",
-          "color": "#66BB6A"
-        }
-      ]
-    }
-  ]
-  
+{
+  "en": {
+    "title": "About Us",
+    "sections": [
+      {
+        "title": "Our Mission",
+        "description": "At ShopMazzys, our mission is to enhance the beauty and lifestyle of women around the world. We believe that beauty is not just about appearance but about feeling confident and empowered in your own skin. Our carefully curated products aim to bring out the best in you, making you feel beautiful inside and out."
+      },
+      {
+        "title": "What We Offer",
+        "description": "ShopMazzys offers a wide range of high-quality beauty products designed to cater to women aged 16 to 60. From makeup to skincare, our products are sourced from the best suppliers worldwide, ensuring they meet the highest standards of aesthetic and safety.",
+        "items": [
+          {
+            "icon": "faHeart",
+            "title": "Enhance Your Beauty",
+            "text": "Our makeup collection includes everything you need to create stunning looks, from everyday wear to glamorous occasions.",
+            "color": "#E57373"
+          },
+          {
+            "icon": "faLightbulb",
+            "title": "Styling Tools",
+            "text": "Achieve salon-quality results at home with our range of styling tools designed to enhance your natural beauty.",
+            "color": "#FFD54F"
+          },
+          {
+            "icon": "faLeaf",
+            "title": "Skincare",
+            "text": "Our skincare products are formulated to nourish and rejuvenate your skin, giving you a radiant and youthful glow.",
+            "color": "#4FC3F7"
+          }
+        ]
+      },
+      {
+        "title": "Our Commitment to the Environment",
+        "description": "At ShopMazzys, we are deeply committed to environmental sustainability. We choose eco-friendly materials and sustainable practices in our products and packaging to reduce our carbon footprint.",
+        "items": [
+          {
+            "icon": "faRecycle",
+            "title": "Sustainable Beauty",
+            "text": "We prioritize products that are not only good for you but also for the planet.",
+            "color": "#66BB6A"
+          }
+        ]
+      },
+      {
+        "title": "Empowering Women",
+        "description": "We believe in empowering women around the world. Our products are designed to boost confidence and enhance your natural beauty. From the young to the young at heart, ShopMazzys is here to support you in your beauty journey.",
+        "items": [
+          {
+            "icon": "faStar",
+            "title": "Top-Quality Products",
+            "text": "Each product is meticulously designed and tested to meet the highest standards of quality and effectiveness.",
+            "color": "#FFD700"
+          },
+          {
+            "icon": "faSmile",
+            "title": "Customer Satisfaction",
+            "text": "Our commitment to customer satisfaction is unwavering, and we go the extra mile to ensure our clients are happy.",
+            "color": "#FFEB3B"
+          },
+          {
+            "icon": "faLeaf",
+            "title": "Holistic Wellness",
+            "text": "We offer a range of solutions that cater to both physical and mental well-being, ensuring a comprehensive approach to beauty.",
+            "color": "#AED581"
+          }
+        ]
+      },
+      {
+        "title": "Our Story",
+        "description": "ShopMazzys started with a passion for beauty and fashion. By visiting beauty fashion events in the East and the West, we gained a clear perspective on the field and available products. This journey has enabled us to curate the best products for you, combining quality, affordability, and boutique charm."
+      }
+    ]
+  },
+  "he": {
+    "title": "אודותינו",
+    "sections": [
+      {
+        "title": "המשימה שלנו",
+        "description": "ב-ShopMazzys, המשימה שלנו היא לשפר את היופי והאורח חיים של נשים ברחבי העולם. אנו מאמינים כי היופי אינו רק במראה חיצוני אלא גם בתחושה של ביטחון והעצמה אישית. המוצרים שלנו, שנבחרו בקפידה, מיועדים להוציא ממך את הטוב ביותר, ולהרגיש יפה מבפנים ומבחוץ."
+      },
+      {
+        "title": "מה אנו מציעים",
+        "description": "ShopMazzys מציעה מגוון רחב של מוצרים איכותיים לטיפוח יופי, המתאימים לנשים בגילאי 16 עד 60. מהמייקאפ ועד טיפוח עור, המוצרים שלנו נאספו מהספקים הטובים ביותר ברחבי העולם, ומבטיחים לעמוד בסטנדרטים הגבוהים ביותר של אסתטיקה ובטיחות.",
+        "items": [
+          {
+            "icon": "faHeart",
+            "title": "שיפור היופי שלך",
+            "text": "קולקציית האיפור שלנו כוללת כל מה שאת צריכה כדי ליצור מראות מרהיבים, מיום-יום ועד אירועים מיוחדים.",
+            "color": "#E57373"
+          },
+          {
+            "icon": "faLightbulb",
+            "title": "כלי עיצוב",
+            "text": "השיגי תוצאות סלון בבית עם מגוון כלי העיצוב שלנו שמטרתם לשפר את היופי הטבעי שלך.",
+            "color": "#FFD54F"
+          },
+          {
+            "icon": "faLeaf",
+            "title": "טיפוח עור",
+            "text": "מוצרי הטיפוח שלנו לעור מיועדים להזין ולרענן את העור שלך, ולתת לך זוהר צעיר ומבריק.",
+            "color": "#4FC3F7"
+          }
+        ]
+      },
+      {
+        "title": "המחויבות שלנו לסביבה",
+        "description": "ב-ShopMazzys, אנו מחויבים עמוקות לקיימות סביבתית. אנו בוחרים חומרים ידידותיים לסביבה ונהלים ברי-קיימא במוצרים ובאריזות שלנו כדי להפחית את טביעת הרגל הפחמנית שלנו.",
+        "items": [
+          {
+            "icon": "faRecycle",
+            "title": "יופי בר-קיימא",
+            "text": "אנו נותנים עדיפות למוצרים שאינם רק טובים לך אלא גם לכדור הארץ.",
+            "color": "#66BB6A"
+          }
+        ]
+      },
+      {
+        "title": "העצמת נשים",
+        "description": "אנו מאמינים בהעצמת נשים ברחבי העולם. המוצרים שלנו מיועדים להגביר את הביטחון העצמי ולשפר את היופי הטבעי שלך. מיצירת מראה צעיר ועד שמירה על חיוניות, ShopMazzys כאן כדי לתמוך בך במסע היופי שלך.",
+        "items": [
+          {
+            "icon": "faStar",
+            "title": "מוצרים באיכות גבוהה",
+            "text": "כל מוצר מתוכנן ונבדק בקפידה כדי לעמוד בסטנדרטים הגבוהים ביותר של איכות ויעילות.",
+            "color": "#FFD700"
+          },
+          {
+            "icon": "faSmile",
+            "title": "שביעות רצון הלקוחות",
+            "text": "המחויבות שלנו לשביעות רצון הלקוחות היא בלתי מתפשרת, ואנו עושים כל מאמץ כדי להבטיח שהלקוחות שלנו יהיו מרוצים.",
+            "color": "#FFEB3B"
+          },
+          {
+            "icon": "faLeaf",
+            "title": "רווחה הוליסטית",
+            "text": "אנו מציעים מגוון פתרונות המיועדים לרווחה פיזית ונפשית, ומבטיחים גישה כוללת ליופי.",
+            "color": "#AED581"
+          }
+        ]
+      },
+      {
+        "title": "הסיפור שלנו",
+        "description": "ShopMazzys התחיל מתשוקה ליופי ואופנה. בביקור באירועי יופי במזרח ובמערב, קיבלנו פרספקטיבה ברורה על התחום והמוצרים הקיימים. מסע זה אפשר לנו לבחור עבורך את המוצרים הטובים ביותר, המשלבים איכות, נגישות וקסם בוטיק."
+      }
+    ]
+  }
+}

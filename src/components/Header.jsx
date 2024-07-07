@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ShoppingCart from '@mui/icons-material/ShoppingCart';
 import { useNavigate } from 'react-router-dom';
 import PAGES from '../assets/json/pages.json';
+import PAGES_PARSER from '../assets/json/pagesParser.json';
 import { CartContext } from '../context/CartContext';
 
 
@@ -54,18 +55,19 @@ const Header = () => {
       </div>
       <nav className='w-1/2 max-sm:w-5/6'>
         <ul className="flex justify-around w-full">
-          {Object.keys(PAGES).map((item,index)=>(
+          {Object.keys(PAGES_PARSER).map((item,index)=>(
           <li key={index}>
-              <Link onClick={onMenuPageClick} to={PAGES[item]} 
+              <Link title={PAGES_PARSER[item]} 
+              onClick={onMenuPageClick} to={PAGES_PARSER[item]} 
               className={`headerLink max-sm:text-sm ${item === page ? ' text-primary':''}`}>
-              {item}
+              {PAGES_PARSER[item]}
               </Link>
           </li>
           ))}
         </ul>
       </nav>
       <div className='w-1/6 text-end'>
-        <Link to="/cart">
+        <Link title={PAGES_PARSER['Cart']} to="/cart">
           <ShoppingCart className="headerLink" />
         </Link>
       </div>

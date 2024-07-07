@@ -48,21 +48,23 @@ const Header = () => {
   },[cart])
 
   const setPageName = ()=>{
-    let fullPath = location.pathname, currPage;
+    let currPage;
+    let fullPath = decodeURIComponent(location.pathname);
     if (fullPath.startsWith('/')){
       fullPath = fullPath.slice(1);
     }
     if (fullPath.includes('/')){
-      currPage = fullPath.slice(0,1).toUpperCase() + fullPath.slice(1,fullPath.indexOf('/')).toLowerCase();
+      currPage = fullPath.slice(0,fullPath.indexOf('/')).toLowerCase();
     }
     else {
-        currPage = fullPath.slice(0,1).toUpperCase() + fullPath.slice(1).toLowerCase();
+        currPage =  fullPath.toLowerCase();
     }
-    if (Object.keys(PAGES).includes(currPage)){
+    // console.log('This is the page: ', currPage);
+    if (Object.values(PAGES).includes(currPage)){
       return  currPage
     }
     else{
-      return 'Home'
+      return 'דף-הבית'
     }
   }
 
@@ -72,13 +74,11 @@ const Header = () => {
 
 
   useEffect(()=>{
-    debug('Entering page name: ', setPageName())
     setPage(setPageName)  
   },[location.pathname])
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
-    console.log('Current target: ',event.currentTarget )
   };
 
   const handleClose = () => {
@@ -91,7 +91,7 @@ const Header = () => {
       <AppBar sx={{background:'white', color:'#403162'}} position="fixed">
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          <Link to={'Home'}>
+          <Link to={'דף-הבית'}>
             <HeaderLogo showText={false} style = {{width:'13em'}} />
           </Link>
           </Typography>
@@ -100,7 +100,9 @@ const Header = () => {
              item !=='Cart' && <Typography key={index} variant="button">
                 <Link to={PAGES[item]} 
                 onClick={()=>setPage(item)}
-                className={`mx-8 font-bold ${page===item ? 'text-primary-orange':''}`}>{item}</Link>
+                className={`mx-8 font-bold ${page===PAGES[item] ? 'text-primary-orange':''}`}>
+                {PAGES[item] || 'דף-הבית'}
+                </Link>
               </Typography>
               
             ))}
@@ -110,9 +112,9 @@ const Header = () => {
           </div>
           <div className='ml-4 mr-2 self-end max-sm:self-center max-sm:mx-8'>
           <Link 
-          onClick={()=>setPage('Cart')}
-          className={`block ${page === 'Cart' ? 'text-primary-orange':'bg-inherit'}`}
-          to="/cart" style={{ textDecoration: 'none',margin: '0 10px' }}>
+          onClick={()=>setPage('סל-קניות')}
+          className={`block ${page === 'סל-קניות' ? 'text-primary-orange':'bg-inherit'}`}
+          to="/סל-קניות" style={{ textDecoration: 'none',margin: '0 10px' }}>
             {cartEmpty ? emptyBag : refBagFull(cart.length || 0)}
               {/* <IconButton color="inherit">
                 <ShoppingBag  />

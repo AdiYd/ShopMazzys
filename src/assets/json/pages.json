@@ -1,7 +1,7 @@
 {
-    "Home": "/",
-    "Products": "/products",
-    "About": "/about",
-    "Contact": "/contact",
-    "Cart": "/cart"
+    "Home": "דף-הבית",
+    "Products": "מוצרים",
+    "About": "עלינו",
+    "Contact": "צרו-קשר",
+    "Cart": "סל-קניות"
 }

@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useParams } from 'react-router-dom';
 import Header from './components/Header';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Products from './pages/Products';
@@ -22,7 +22,6 @@ const PageWrapper = () => {
   try{
       for (let item of products){
         if (item?.title === arg){
-          debug('Routing to : ', arg);
           return <Products productName={arg} />;
         }
       }
@@ -63,16 +62,16 @@ const App = () => {
           <Routes>
             <Route path='*' index element={<Home />} />
             <Route path="/" element={<Home />} />
-            <Route path="/relaxWave" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/products/*" element={<Products productName={'none'} />} />
-            <Route path="/products/:arg" element={<PageWrapper />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/terms-and-conditions" element={<LegalPage section="termsAndConditions" />} />
-            <Route path="/cookies-policy" element={<LegalPage section="cookiesPolicy" />} />
-            <Route path="/privacy-policy" element={<LegalPage section="privacyPolicy" />} />
-            <Route path="/disclaimer" element={<LegalPage section="disclaimer" />} />
+            <Route path="/ShopMazzys" element={<Home />} />
+            <Route path="/עלינו" element={<About />} />
+            <Route path="/מוצרים/*" element={<Products productName={'none'} />} />
+            <Route path="/מוצרים/:arg" element={<PageWrapper />} />
+            <Route path="/סל-קניות" element={<Cart />} />
+            <Route path="/צרו-קשר" element={<Contact />} />
+            <Route path="/תנאי-שימוש" element={<LegalPage section="termsAndConditions" />} />
+            <Route path="/עוגיות" element={<LegalPage section="cookiesPolicy" />} />
+            <Route path="/הצהרת-פרטיות" element={<LegalPage section="privacyPolicy" />} />
+            <Route path="/הצהרת-נגישות" element={<LegalPage section="accessibilityStatement" />} />
           </Routes>
         </main>
         <Footer />

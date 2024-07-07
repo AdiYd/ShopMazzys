@@ -8,7 +8,9 @@
 body {
   font-family: 'Roboto', 'Inter', 'Roboto', sans-serif;
   font-family: -apple-system, "BlinkMacSystemFont", "Segoe UI (Custom)", "Roboto", "Helvetica Neue", "Open Sans (Custom)", system-ui, "Segoe UI", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    /* font-size: calc(10px + 1.5vw) !important; */
+  font-family: 'Alef', sans-serif;
+  font-size: calc(10px + 0.5vw) !important;
+  direction: rtl;
     /* Responsive font size */
 }
 
@@ -17,11 +19,13 @@ h1 {
   font-weight: 700;
   /* Bold */
   font-family: 'Roboto', 'Montserrat', 'Open Sans', sans-serif;
+  font-family: 'Alef', sans-serif;
 }
 
 h2 {
   font-weight: 600;
   font-family: 'Roboto', 'Montserrat', 'Open Sans', sans-serif;
+  font-family: 'Alef', sans-serif;
 }
 
 h3,
@@ -30,11 +34,13 @@ h5,
 h6 {
   font-weight: 500;
   font-family: 'Roboto', 'Montserrat', 'Open Sans', sans-serif;
+  font-family: 'Alef', sans-serif;
 }
 
 p,
 li {
   font-weight: 400;
+  font-family: 'Alef', sans-serif;
   /* Regular */
 }
 
