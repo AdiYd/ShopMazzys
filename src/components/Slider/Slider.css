@@ -1,0 +1,62 @@
+/* Swiper slide */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 1.5em; */
+    background: #f5f5f5;
+}
+
+
+/* Custom navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    /* Customize the arrow color */
+    background-color: rgba(230, 219, 219, 0.5);
+    padding: 25px;
+    /* Add a background color */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    /* Make the arrows circular */
+    width: 20px;
+    height: 20px;
+    display: flex;
+    /* position: absolute; */
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-prev {
+    left: 10px;
+}
+
+.swiper-button-next {
+    right: 10px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    color: #17332A;
+    font-size: large !important;
+    font-weight: 700 !important;
+}
+
+/* .swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: #FEF8E9;
+}
+
+*/
+
+/* Custom pagination dots */
+.swiper-pagination-bullet {
+    /* Customize the dot color */
+    opacity: 1;
+    /* Make the dots fully opaque */
+}
+
+.swiper-pagination-bullet-active {
+    background: #ff4500;
+    /* Different color for active dot */
+}

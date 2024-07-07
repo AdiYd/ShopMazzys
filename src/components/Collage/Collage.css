@@ -1,0 +1,85 @@
+/* Base styles */
+.collage-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    padding: 0.5em;
+    animation: fadeIn 2s ease-out;
+    justify-content: center;
+    align-items: center;
+    /* Center the content */
+}
+
+.collage-item {
+    cursor: pointer;
+    overflow: hidden;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    flex: 1 1 auto;
+}
+
+.collage-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.collage-item:hover .collage-img {
+    transform: scale(1.15);
+}
+
+.collage-item-main {
+    @apply shadow-lg;
+}
+
+.collage-item-main:hover {
+    animation: button-glow 1s infinite alternate;
+}
+/* Individual item styles for different frames */
+.collage-item-0 {
+    border: 1px solid #c97a5b6a;
+}
+
+.collage-item-1 {
+    border: 1px solid #ee5d5d58;
+}
+
+.collage-item-2 {
+    border: 1px solid #17332a55;
+}
+
+.collage-item-3 {
+    border: 1px solid #c97a5b51;
+}
+
+.collage-item-4 {
+    border: 1px solid #5dd8ee4e;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    .collage-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .collage-item {
+        flex: 1 0 100%;
+        margin-bottom: 16px;
+    }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

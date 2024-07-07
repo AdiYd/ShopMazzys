@@ -1,0 +1,85 @@
+[
+    {
+      "title": "Our Agenda",
+      "description": "At RelaxWave, we believe in the power of relaxation to improve lives. Our agenda is simple yet profound:",
+      "items": [
+        {
+          "icon": "faHeart",
+          "title": "Enhance Well-being",
+          "text": "We strive to provide tools that help our clients find peace and tranquility in their daily lives.",
+          "color": "#E57373"
+        },
+        {
+          "icon": "faLightbulb",
+          "title": "Innovate Continuously",
+          "text": "We are committed to staying at the forefront of technology, ensuring our products are not only effective but also cutting-edge.",
+          "color": "#FFD54F"
+        },
+        {
+          "icon": "faGlobe",
+          "title": "Global Reach",
+          "text": "Our products are designed to cater to diverse needs and are accessible to people worldwide.",
+          "color": "#4FC3F7"
+        }
+      ]
+    },
+    {
+      "title": "Transforming Lives Globally",
+      "description": "RelaxWave has touched the lives of countless individuals across the globe. Our products are crafted to deliver unparalleled relaxation, promoting mental clarity, reduced stress, and overall well-being. Here’s how we’ve made a difference:",
+      "items": [
+        {
+          "icon": "faSpa",
+          "title": "Stress Reduction",
+          "text": "Our innovative relaxation devices help alleviate stress, allowing users to unwind and recharge.",
+          "color": "#81C784"
+        },
+        {
+          "icon": "faBed",
+          "title": "Improved Sleep",
+          "text": "Many of our clients have reported better sleep quality, thanks to our soothing products.",
+          "color": "#BA68C8"
+        },
+        {
+          "icon": "faBrain",
+          "title": "Improved Focus",
+          "text": "By promoting relaxation, our products help improve concentration and productivity.",
+          "color": "#FF8A65"
+        },
+        {
+          "icon": "faLeaf",
+          "title": "Holistic Wellness",
+          "text": "We offer a range of solutions that cater to both physical and mental well-being, ensuring a comprehensive approach to relaxation.",
+          "color": "#AED581"
+        }
+      ]
+    },
+    {
+      "title": "Environmental Responsibility",
+      "description": "At RelaxWave, we take our responsibility to the environment seriously. We are committed to minimizing the use of non-recyclable materials in our products and packaging. Our manufacturing processes are designed to reduce waste and promote sustainability.",
+      "additionalText": "We worship the earth and seek to make it a better place to live in. By choosing eco-friendly materials and sustainable practices, we aim to reduce our carbon footprint and inspire others to do the same. Join us in our mission to protect the planet for future generations."
+    },
+    {
+      "title": "Why Choose RelaxWave?",
+      "items": [
+        {
+          "icon": "faStar",
+          "title": "Top-Quality Products",
+          "text": "Each product is meticulously designed and tested to meet the highest standards of quality and effectiveness.",
+          "color": "#FFD700"
+        },
+        {
+          "icon": "faSmile",
+          "title": "Customer Satisfaction",
+          "text": "Our commitment to customer satisfaction is unwavering, and we go the extra mile to ensure our clients are happy.",
+          "color": "#FFEB3B"
+        },
+        {
+          "icon": "faRecycle",
+          "title": "Sustainable Practices",
+          "text": "We are dedicated to sustainability, ensuring our products and processes are environmentally friendly.",
+          "color": "#66BB6A"
+        }
+      ]
+    }
+  ]
+  
