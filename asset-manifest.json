@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/ShopMazzys/static/css/main.5ada1615.css",
-    "main.js": "/ShopMazzys/static/js/main.dba98a96.js",
+    "main.css": "/ShopMazzys/static/css/main.f2654be2.css",
+    "main.js": "/ShopMazzys/static/js/main.1b6aa044.js",
     "static/media/slick.svg": "/ShopMazzys/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/ShopMazzys/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/ShopMazzys/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "index.html": "/ShopMazzys/index.html",
     "static/media/slick.woff": "/ShopMazzys/static/media/slick.295183786cd8a1389865.woff",
-    "main.5ada1615.css.map": "/ShopMazzys/static/css/main.5ada1615.css.map",
-    "main.dba98a96.js.map": "/ShopMazzys/static/js/main.dba98a96.js.map"
+    "main.f2654be2.css.map": "/ShopMazzys/static/css/main.f2654be2.css.map",
+    "main.1b6aa044.js.map": "/ShopMazzys/static/js/main.1b6aa044.js.map"
   },
   "entrypoints": [
-    "static/css/main.5ada1615.css",
-    "static/js/main.dba98a96.js"
+    "static/css/main.f2654be2.css",
+    "static/js/main.1b6aa044.js"
   ]
 }
