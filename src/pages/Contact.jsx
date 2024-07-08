@@ -89,7 +89,7 @@ const Contact = () => {
           <Typography variant="h4" component="h1" gutterBottom>
             כתבו לנו
           </Typography>
-          <Typography variant="body1" gutterBottom>
+          <Typography variant="body1" component='p' gutterBottom>
             אם יש לכם שאלות, הערות או הארות - הרגישו חופשי לפנות אלינו
           </Typography>
         </Box>

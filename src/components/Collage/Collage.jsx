@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import './Collage.css';
 const [maxHeight, maxWidth] = ['200px', 'none'];
 
-const generateImageUrls = (count) => {
+export const generateImageUrls = (count, imgWidth, imgHeight) => {
   const urls = [];
   for (let i = 0; i < count; i++) {
-    const width = Math.floor(Math.random() * 200) + 100; // Random width between 300 and 500
-    const height = Math.floor(Math.random() * 200) + 100; // Random height between 300 and 500
+    const width = imgWidth || Math.floor(Math.random() * 200) + 100; // Random width between 300 and 500
+    const height = imgHeight || Math.floor(Math.random() * 200) + 100; // Random height between 300 and 500
     urls.push(`https://picsum.photos/${width}/${height}`);
   }
   return urls;

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -13,6 +13,7 @@ import { HeaderLogo, Logo } from './Header';
 import PAGES from '../assets/json/pages.json';
 import { debug } from '../App';
 import { CartContext } from '../context/CartContext';
+import { mazzysLogo } from '../pages/Home';
 
 const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
 
@@ -35,6 +36,7 @@ const emptyBag =
 
 const Header = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const {cart} = useContext(CartContext);
   const [cartEmpty, setCartEmpty] = useState(true);
 
@@ -72,7 +74,6 @@ const Header = () => {
   const [page, setPage] = useState(setPageName);
 
 
-
   useEffect(()=>{
     setPage(setPageName)  
   },[location.pathname])
@@ -88,27 +89,27 @@ const Header = () => {
   return (
     <>
     <div id='navbar'>
-      <AppBar sx={{background:'white', color:'#403162'}} position="fixed">
+      <AppBar sx={{background:'white',direction:'ltr', color:'#403162'}} position="fixed">
         <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          <Link to={'דף-הבית'}>
-            <HeaderLogo showText={false} style = {{width:'13em'}} />
+          <Typography sx={{ flexGrow: 1, padding:'0px', margin:'0px' }}>
+          <Link className='text-black' to={'דף-הבית'}>
+            {mazzysLogo({showText:false,shadow:true, height:50, width:50, r:8})}
           </Link>
           </Typography>
-          <div className="sectionDesktop rtl w-1/2  self-end flex justify-around max-sm:hidden">
+          <div dir='rtl' className="sectionDesktop w-1/2 self-end flex justify-around max-sm:hidden">
             {Object.keys(PAGES).map((item, index)=>(
-             item !=='Cart' && <Typography key={index} variant="button">
+             item !=='Cart' && <Typography key={index} variant="p">
                 <Link to={PAGES[item]} 
                 onClick={()=>setPage(item)}
-                className={`mx-8 font-bold ${page===PAGES[item] ? 'text-primary-orange':''}`}>
-                {PAGES[item] || 'דף-הבית'}
+                className={`mx-8 ${page===PAGES[item] ? 'text-primary-orange font-bold':''}`}>
+                {PAGES[item]==='דף-הבית' ? 'דף הבית' : PAGES[item] || 'דף הבית'}
                 </Link>
               </Typography>
               
             ))}
           </div>
           <div className="text-start ml-12 w-full hidden max-sm:block">
-                <h1 style={{fontFamily:'cursive'}}>RelaxWave</h1>
+                <h1 style={{fontFamily:'cursive'}}>Mazzys</h1>
           </div>
           <div className='ml-4 mr-2 self-end max-sm:self-center max-sm:mx-8'>
           <Link 
@@ -161,7 +162,7 @@ const Header = () => {
     </div>
     {(!cartEmpty&& page!=='Cart') && <div title='Checkout'
             className='rounded-full bg-white/80 cursor-pointer z-50 shadow-lg hover:shadow-xl border fixed bottom-1/4 right-2 w-fit h-fit'>
-            <Link className='cursor-pointer' to={'/Cart'}>
+            <Link className='cursor-pointer' to={'/סל-קניות'}>
               {refBagFull(cart.length, 'w-16 h-16 max-sm:w-12 max-sm:h-12')}
             </Link>
         </div>}

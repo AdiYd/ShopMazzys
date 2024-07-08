@@ -5,6 +5,7 @@ import products from '../assets/json/productData.json';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Item from '../components/Item';
 import { CartContext } from '../context/CartContext';
+import { generateImageUrls } from '../components/Collage/Collage';
 
 const productsName = products.map(item=>item.title);
 
@@ -33,6 +34,7 @@ const onAddToCartClick = (customerRequest)=>{
     console.log('Am here', customerRequest);
     addToCart(customerRequest);
 }
+let imageList = generateImageUrls(products.length);
 
   return (
     <div className="pageContainer max-sm:px-4">
@@ -49,13 +51,19 @@ const onAddToCartClick = (customerRequest)=>{
     {productsName.includes(product) &&
       <h2 className="text-2xl font-bold text-primary mb-4">Recomended for you :</h2>}
       <div className="p-4 flex flex-wrap gap-y-8 justify-around max-sm:p-8">
-        {products?.map((product,indx) => (
+        {products?.map((product,indx) => {
+          product.image = imageList[indx];
+       
+          return(
           <ProductCard 
+          imageAsUrl
+          containerClass='h-auto'
           onClick={()=>{navigate(`/מוצרים/${product.title}`); setTimeout(()=>{scrollToSection()},200)}}
+          shadow
           onBtnClick={onAddToCartClick}
           key={indx}  
           productData={product} />
-        ))}
+        )})}
       </div>
     </div>
   );

@@ -7,6 +7,29 @@ import { faBell, faGift, faL } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import useWindowDimensions from '../assets/useWindowDimensions';
 import { SwiperCarousel } from '../components/Slider/Slider';
+import { colors } from '@mui/material';
+
+export const mazzysLogo = ({flowerColor='#F4CBCB',width=200,height=100 , r=10 ,textColor, showText = true, showLogo=true,shadow = false, ...props}={})=>{
+  const cx = width / 2;
+  const cy = showText ? height / 3 : height/2;
+
+  return (
+    <svg id='Logo' width={width} height={height} viewBox={`0 0 ${width} ${height}`} {...props} xmlns="http://www.w3.org/2000/svg">
+      {showLogo && <g className={`${shadow ? 'dropShadow':''} cursor-pointer`}>
+      {/* <circle className='' style={{fill: flowerColor}} cx={cx} cy={cy - 1.8 * r} r={r} />
+      <circle className='' style={{fill: flowerColor}} cx={cx} cy={cy + 1.8 * r} r={r} /> */}
+      <circle className='' style={{fill: flowerColor}} cx={cx - 1.4 * r} cy={cy - 1.1*r} r={r} />
+      <circle className='' style={{fill: flowerColor}} cx={cx + 1.4 * r} cy={cy - 0.9*r} r={r} />
+      <circle className='' style={{fill: flowerColor}} cx={cx - 1.4 * r} cy={cy + 0.9*r} r={r} />
+      <circle className='' style={{fill: flowerColor}} cx={cx + 1.4 * r} cy={cy + 1.1*r} r={r} />
+      <circle cx={cx} cy={cy} r={r} fill={'currentColor'}/>
+      </g>}
+      {showText &&
+      <text color ={textColor || 'currentColor'} className="textLogo text-primary-orange" x={cx + width / 4} y={cy + height / 2}>MAZZY'S</text>}
+    </svg>
+  );
+}
+
 
 
 const Home = () => {
@@ -36,8 +59,11 @@ export default Home;
 const HomeContentHeb = ({navigate, width, onSumbitHandler}) => (
   <div className="pageContainer max-sm:px-0">
     <header className="text-center mb-8 mt-4 fade-in">
-      <h1 className="title border-b">Mezzys</h1>
-      <h2 className="mt-4 text-xl">היעד שלך ליופי ואסתטיקה</h2>
+      <div className='flex justify-center'>
+      {mazzysLogo({className:'cursor-ponter', shadow: true})}
+      </div>
+      <h1 className="hidden">Mezzys</h1>
+      <h2 className="mt-4 text-xl">היעד שלך ליופי וטיפוח</h2>
     </header>
 
     <section className="mb-12 max-sm:px-8">
@@ -55,10 +81,12 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => (
             item.id < 31 && (
               <ProductCard
                 key={index}
-                buttonText="צפה במוצר"
+                buttonText="פרטים נוספים"
                 showPrice={false}
                 onBtnClick={() => { navigate(`מוצרים/${item.title}`); }}
-                imageClass="w-5/6 max-h-56 mx-auto rounded-full shadow-md object-cover"
+                imageClass="w-full h-52 mx-auto rounded-t-lg rounded-b-none object-cover"
+                containerClass='width-44 shadow-md rounded-lg'
+                className="w-4 rounded-t-lg rounded-b-none"
                 showProductCount={false}
                 isSale={true}
                 showDiscount={item.id === 20}
@@ -78,12 +106,15 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => (
             {products.map((item, index) => (
               <ProductCard
                 key={index}
-                buttonText="צפה במוצר"
+                buttonText="פרטים נוספים"
                 showPrice={true}
+                showTitle={false}
+                smallTitle={true}
                 showDescription={false}
-                containerClass="w-72 card_frame"
+                imageWidth={250}
+                imageClass="w-full h-52 mx-auto rounded-t-lg rounded-b-none object-cover"
+                containerClass='width-44 shadow-md rounded-lg'
                 onBtnClick={() => { navigate(`מוצרים/${item.title}`); }}
-                imageClass="w-full max-h-36 mx-auto shadow-md object-cover"
                 showProductCount={false}
                 isSale={false}
                 showDiscount={item.id === 20}
@@ -99,7 +130,7 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => (
       <h2 className="sectionTitle">המלצות לקוחות</h2>
       <SwiperCarousel >
       {customeRec.map((item, index)=>(
-        <div className="bg-white p-6 w-80 rounded-lg shadow-md">
+        <div key={index} className="bg-neutral-50 p-6 w-80 rounded-lg shadow-md">
             <blockquote 
             style={{borderColor: item.borderColor}}
             className="text-neutral-dark italic border-r-4 border-primary pr-4">
@@ -122,7 +153,9 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => (
 
     <section className="bg-primary/90 text-primary-white fill-primary-white p-6 text-center border rounded-2xl w-4/5 mx-auto max-sm:w-full max-sm:px-4 max-sm:border-none max-sm:rounded-none">
       <div className="items-center justify-center gap-8 mb-8 max-sm:gap-4">
-        <FontAwesomeIcon className="shake mb-4 text-orange-400" icon={faBell} size="xl" color="inherit" />
+        <FontAwesomeIcon 
+         className="shake mb-4 text-orange-400" 
+         icon={faBell} size="xl" color="inherit" />
         <h2 dir='rtl' className="text-xl">🎁 &nbsp; הירשמו למבצעים והנחות &nbsp; 🎉</h2>
       </div>
       <form dir='rtl' onSubmit={onSumbitHandler} className="flex flex-col md:items-center md:space-x-4 max-sm:flex-col">

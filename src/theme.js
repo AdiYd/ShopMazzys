@@ -15,6 +15,8 @@ export const themeFull = createTheme({
   },
   typography: {
     fontFamily: [
+      'Alef',
+      '-apple-system',
       'Roboto',
       'Arial',
       'sans-serif',

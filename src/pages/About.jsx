@@ -32,7 +32,7 @@ const AboutSection = ({ section }) => {
                 color = {item.color}
                 icon={iconMap[item.icon]} 
                 className="mr-2 mt-1" />
-                <span className="font-semibold text-primary-dark">{item.title}:</span>
+                <span className="font-semibold text-primary-dark">{item.title}: &nbsp;</span>
               </div>
               <span className="ml-2">{item.text}</span>
             </li>

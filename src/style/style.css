@@ -6,6 +6,27 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+svg#Logo {
+    transition: filter 0.3s, transform 0.3s;
+    /* Add transition for smooth hover effect */
+}
+
+    
+.dropShadow {
+    transition: filter 0.3s, transform 0.3s;
+    filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.397));
+}
+
+.dropShadow:hover {
+    filter: drop-shadow(3px 5px 4px rgba(31, 31, 31, 0.5));
+}
+
+.textLogo {
+    /* font-size: 20px; */
+    @apply text-primary;
+    font-family: 'Pacifico';
+    font-weight: 600;
+}
 #navbar {
     z-index: 50;
 }
@@ -18,11 +39,11 @@
     z-index: 52;
 }
 .card {
-    @apply flex flex-col h-full rounded-md bg-neutral-100/80 max-sm:px-2 p-4 overflow-y-clip relative justify-between cursor-default max-w-sm w-fit text-center;
+    @apply flex flex-col bg-white p-0 pb-4 h-full rounded-lg max-sm:px-0 overflow-y-clip relative justify-between cursor-default max-w-sm w-fit text-center;
 }
     
 .card_frame {
-    @apply border rounded-lg bg-slate-100/50 shadow-md hover:shadow-lg;
+    @apply border rounded-lg shadow-md hover:shadow-lg;
 }
 
 .title {
@@ -76,7 +97,7 @@ div.card::-webkit-scrollbar-thumb:active {
 }
 
 .pageContainer {
-    @apply bg-neutral/30 p-4 px-8;
+    @apply p-4 px-8 cursor-default max-sm:px-3;
 }
     
 .sectionTitle {
@@ -252,7 +273,26 @@ img#cardImg:hover {
 .shake {
     animation: shake 0.7s alternate ease-in-out infinite forwards;
 }
+  /* Apply the animation to a class */
+  .hoverRotate {
+      display: inline-block;
+      transition: transform 0.5s ease-in-out;
+  }
+
+  .hoverRotate:hover {
+      animation: hoverRotate 2s infinite alternate;
+  }
 /* ++++++++++++++++++++++++++++ Keyframe Animations ++++++++++++++++++++++++++++ */
+/* Define the keyframe animation */
+@keyframes hoverRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 @keyframes fadeIn {
     0% {
         opacity: 0;

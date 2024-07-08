@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { StyledButton } from './MUI';
-import { Button, IconButton, TextField } from '@mui/material';
+import { Button, IconButton, TextField, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { currDict } from './Item';
 
@@ -28,23 +28,28 @@ const SaleIcon = (...props) => (
   </svg>
 );
 
-const defaultImageClass = "w-full mx-auto max-h-56 shadow rounded-md object-cover";
+const defaultImageClass = "w-full mx-auto max-h-56 shadow rounded-t-lg rounded-b-none object-cover";
 const ProductCard = ({ 
   productData,
+  imageAsUrl = false,
   minQuantity = 1,
   maxQuantity = 10,
   showProductCount = true ,
   showDescription = true,
   showOldPrice = true,
   showPrice = true, 
+  showTitle = true,
+  smallTitle = false,
   showButton = true,
-  buttonText = 'Add to Cart',
+  border=false,
+  shadow = false,
+  buttonText = 'הוספה לסל',
   onBtnClick = (e)=>{console.log(e.target?.innerText, ' Clicked!')},
   onClick,
   imageWidth,
   isSale = false,
   showDiscount = false,
-  discountText = 'OFF',
+  discountText = 'הנחה',
   imageClass =  defaultImageClass,
   containerClass='',
   cardHeight }) => {
@@ -81,10 +86,10 @@ const ProductCard = ({
   onBtnClick(customerRequest)
   }
 
-
+  let imageSrc = imageAsUrl ? productData.image : process.env.PUBLIC_URL+productData.image;
   return (
     productData && <div 
-    className={`card mx-auto cursor-pointer ${containerClass}`} style={{height:cardHeight}}>
+    className={`card mx-auto ${border ? 'border':''} ${shadow ? 'shadow-md':''} cursor-pointer ${containerClass}`} style={{height:cardHeight}}>
       {(productData.discount && showDiscount) && <button 
         className="absolute top-4 left-4 px-2 py-1 text-xs rounded-md bg-red-950 text-white">
         {`${Math.floor(100*(1-productData.price/productData.originalPrice))}% ${discountText}`}
@@ -93,25 +98,33 @@ const ProductCard = ({
       <img 
       onClick={onClick}
       id='cardImg' 
-      src={process.env.PUBLIC_URL + productData.image} 
-      style={{width: `${imageWidth}px`, height:imageWidth ?`${0.8*imageWidth}px`:undefined }}
+      src={imageSrc} 
+      style={{width: `${imageWidth}px`, height:imageWidth&&!imageClass ?`${0.8*imageWidth}px`:undefined }}
       alt={productData.name} className={imageClass} />
       </div>
-      <div  onClick={onClick}>
-      <h4 className="font-bold text-primary text-lg max-sm:text-base mt-2 mx-auto">{productData.title}</h4>
-      <hr className='mb-2 mt-0 mx-auto w-2/3 border-b' />
-      {showDescription &&<p className="text-gray-500 text-sm">{productData.description}</p>}
+      <div className='px-4' onClick={onClick}>
+        {showTitle&&!smallTitle ? 
+        <>
+          <p className="font-bold text-primary mb-4 mt-6 max-sm:text-base mx-auto">
+        {productData.title}</p>
+        <hr className='mb-2 mt-0 mx-auto w-2/3 border-b' /></>
+        : smallTitle && <p className='flex w-full my-4 text-sm text-start font-bold'>
+          {productData.title}
+        </p>}
+        
+        {showDescription &&<p className="text-gray-500 text-sm">{productData.description}</p>}
       </div>
-      {showPrice && <div  onClick={onClick} className="mt-4 mx-auto flex justify-center">
+      {showPrice && <div dir='ltr' onClick={onClick} className="mt-4 mx-auto flex justify-center">
         {(productData.originalPrice && showOldPrice) &&
         <div className="relative w-fit mx-auto max-sm:text-xs">
           {isSale &&  <SaleIcon />}
-          <p className="line-through text-gray-500">${productData.originalPrice}</p>
+          <p className="line-through text-sm text-gray-500">
+          {productData.originalPrice}</p>
         </div>}
-        <p className="font-bold md:text-xl text-red-800 ml-2">{currDict[productData.price]}{productData.price}</p>
+        <p className="font-bold md:text-xl text-red-800 ml-2">{currDict[productData.currency]}{productData.price}</p>
       </div>}
         {(showProductCount && showButton )?  
-              <div className="flex w-full align-baseline justify-between mx-auto items-center mt-4">
+              <div dir='ltr' className="flex w-auto mx-4 align-baseline justify-between items-center mt-4">
                   <Button
                   variant='contained' color='info'                
                   sx={{textWrap:'nowrap'}}  
@@ -144,7 +157,7 @@ const ProductCard = ({
                       </IconButton>
                   </div>
              </div> : 
-             <div className='mt-4 items-center w-full p0 mb-0'>
+             <div className='mt-4 mx-4 items-center w-full p0 mb-0'>
                     <Button
                     variant="contained" 
                     color='info'

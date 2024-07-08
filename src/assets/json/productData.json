@@ -1,192 +1,362 @@
 [
   {
-    "title": "RelaxWave Massager",
+    "title": "מסקרה טבעית",
     "id": 10,
-    "description": "Experience soothing relief with our ergonomic massager, designed to target stress points with precision.",
+    "description": "לשפשף את העיניים במסקרה טבעית",
     "image": "/assets/product1.png",
     "collageImage": [],
     "carouselImage": [],
-    "descriptionBody": "Our RelaxWave Massager provides the ultimate relaxation experience by precisely targeting stress points, alleviating pain, and enhancing overall well-being.",
+    "descriptionBody": null,
     "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
     "originalPrice": 199.99,
-    "currency": "usd",
+    "currency": "nis",
     "price": 149.99,
     "discount": true,
     "buyingOptions": {
-      "Items": ["Item 1", "Item 2", "Item 3"],
-      "Color": ["White", "Black", "Blue"],
-      "Size": ["xl", "l", "m", "s", "xs"]
+      "צבע": ["שחור", "חום", "כחול"],
+      "מידה": ["גדול", "בינוני", "קטן"]
     }
   },
   {
-    "title": "CalmWave Light Projector",
+    "title": "קונסילר עמיד",
     "id": 20,
-    "description": "Create a serene ambiance with our light projector, featuring customizable light patterns that mimic the soothing effect of ocean waves.",
+    "description": "קונסילר עמיד לכיסוי מושלם",
     "image": "/assets/product2.png",
     "collageImage": [],
     "carouselImage": [],
-    "descriptionBody": "The CalmWave Light Projector transforms your space into a tranquil oasis, with customizable light patterns that mimic the gentle movement of ocean waves, promoting relaxation and peace.",
+    "descriptionBody": null,
     "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
     "originalPrice": 99.99,
-    "currency": "usd",
+    "currency": "nis",
     "price": 79.99,
     "discount": true,
     "buyingOptions": {
-      "Items": ["Item 1", "Item 2", "Item 3"],
-      "Color": ["White", "Black", "Blue"],
-      "Size": ["xl", "l", "m", "s", "xs"]
+      "צבע": ["בהיר", "כהה", "ניוד"],
+      "מידה": ["גדול", "בינוני"]
     }
   },
   {
-    "title": "WaveAroma Diffuser",
+    "title": "מברשת פנים עדינה",
     "id": 30,
-    "description": "Infuse your space with calming scents using our aroma diffuser, designed to promote relaxation and wellness.",
+    "description": "מברשת פנים עדינה לאפליקציה מדויקת",
     "image": "/assets/product3.png",
     "collageImage": [],
     "carouselImage": [],
-    "descriptionBody": "Enhance your environment with the WaveAroma Diffuser, which releases calming scents to promote relaxation and improve overall wellness, making your space a sanctuary.",
+    "descriptionBody": null,
     "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
     "originalPrice": 59.99,
-    "currency": "usd",
+    "currency": "nis",
     "price": 49.99,
     "discount": true,
     "buyingOptions": {
-      "Items": ["Item 1", "Item 2", "Item 3"],
-      "Color": ["White", "Black", "Blue"],
-      "Size": ["xl", "l", "m", "s", "xs"]
+      "צבע": ["לבן", "שחור", "אדום"],
+      "מידה": ["גדול", "בינוני", "קטן"]
     }
   },
   {
-    "title": "TranquilSound Machine",
+    "title": "מספרה עם מראה טבעי",
     "id": 40,
-    "description": "Drift off to sleep with our sound machine that provides a variety of soothing sounds to create the perfect sleep environment.",
+    "description": "מספרה עם מראה טבעי לריסים עבים",
     "image": "/assets/product4.png",
     "collageImage": [],
     "carouselImage": [],
-    "descriptionBody": "The TranquilSound Machine is designed to help you drift off to sleep effortlessly. With a variety of soothing sounds, it creates the perfect sleep environment, helping you to relax and enjoy a restful night’s sleep.",
+    "descriptionBody": null,
     "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
     "originalPrice": 79.99,
-    "currency": "usd",
+    "currency": "nis",
     "price": 64.99,
     "discount": true,
     "buyingOptions": {
-      "Items": ["Item 1", "Item 2", "Item 3"],
-      "Color": ["White", "Black", "Blue"],
-      "Size": ["xl", "l", "m", "s", "xs"]
+      "צבע": ["שחור", "חום", "בז'"],
+      "מידה": ["גדול", "בינוני", "קטן"]
     }
   },
   {
-    "title": "ZenMat Acupressure Mat",
+    "title": "מברשת צללית נקיה",
     "id": 50,
-    "description": "Relieve stress and pain with our acupressure mat, which stimulates pressure points to promote relaxation and healing.",
+    "description": "מברשת צללית נקיה לאיפור מדויק",
     "image": "/assets/product5.png",
     "collageImage": [],
     "carouselImage": [],
-    "descriptionBody": "The ZenMat Acupressure Mat is designed to relieve stress and pain by stimulating pressure points across your body. This mat promotes relaxation and healing, making it a great addition to your wellness routine.",
+    "descriptionBody": null,
     "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
     "originalPrice": 49.99,
-    "currency": "usd",
+    "currency": "nis",
     "price": 39.99,
     "discount": true,
     "buyingOptions": {
-      "Items": ["Item 1", "Item 2", "Item 3"],
-      "Color": ["White", "Black", "Blue"],
-      "Size": ["xl", "l", "m", "s", "xs"]
+      "צבע": ["בהיר", "כהה", "כחול"],
+      "מידה": ["גדול", "בינוני"]
     }
   },
   {
-    "title": "HarmonyLight Smart Bulb",
+    "title": "נבחרת קטנה",
     "id": 60,
-    "description": "Illuminate your home with customizable colors and smart controls. The HarmonyLight Smart Bulb connects to your Wi-Fi and can be controlled via an app or voice assistant.",
+    "description": "נבחרת קטנה לאיפור פנים מושלם",
     "image": "/assets/product6.png",
     "collageImage": [],
     "carouselImage": [],
-    "descriptionBody": "The HarmonyLight Smart Bulb offers customizable lighting options to match your mood and environment. With smart controls, you can easily adjust the light settings via an app or voice assistant, providing a seamless and modern lighting solution.",
+    "descriptionBody": null,
     "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
     "originalPrice": 49.99,
-    "currency": "usd",
+    "currency": "nis",
     "price": 39.99,
     "discount": true,
     "buyingOptions": {
-      "Items": ["Item 1", "Item 2", "Item 3"],
-      "Color": ["White", "Black", "Blue"],
-      "Size": ["xl", "l", "m", "s", "xs"]
+      "צבע": ["אדום", "כחול", "ירוק"],
+      "מידה": ["גדול", "בינוני"]
     }
   },
   {
-    "title": "SereneSound Bluetooth Speaker",
+    "title": "רוזמוב",
     "id": 70,
-    "description": "Enjoy high-quality sound and ambient music with the SereneSound Bluetooth Speaker. Perfect for creating a relaxing environment at home.",
+    "description": "נבחרת רוזמוב לפנים מקצועי",
     "image": "/assets/product7.png",
     "collageImage": [],
     "carouselImage": [],
-    "descriptionBody": "The SereneSound Bluetooth Speaker provides high-quality sound and ambient music, making it perfect for creating a relaxing environment at home. Connect it to your devices wirelessly and enjoy your favorite tunes in style.",
+    "descriptionBody": null,
     "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
     "originalPrice": 89.99,
-    "currency": "usd",
+    "currency": "nis",
     "price": 69.99,
     "discount": true,
     "buyingOptions": {
-      "Items": ["Item 1", "Item 2", "Item 3"],
-      "Color": ["White", "Black", "Blue"],
-      "Size": ["xl", "l", "m", "s", "xs"]
+      "צבע": ["לבן", "שחור", "כסף"],
+      "מידה": ["גדול", "בינוני"]
     }
   },
   {
-    "title": "AromaWave Essential Oil Diffuser",
+    "title": "תחתון ג'נג'י",
     "id": 80,
-    "description": "Fill your home with soothing scents using the AromaWave Essential Oil Diffuser. Features a sleek design and multiple mist modes for a calming atmosphere.",
+    "description": "תחתון ג'נג'י נוח לאישה",
     "image": "/assets/product8.png",
     "collageImage": [],
     "carouselImage": [],
-    "descriptionBody": "The AromaWave Essential Oil Diffuser combines sleek design with functionality, allowing you to fill your home with calming scents. It features multiple mist modes to create the perfect relaxing atmosphere.",
+    "descriptionBody": null,
     "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
     "originalPrice": 59.99,
-    "currency": "usd",
+    "currency": "nis",
     "price": 44.99,
     "discount": true,
     "buyingOptions": {
-      "Items": ["Item 1", "Item 2", "Item 3"],
-      "Color": ["White", "Black", "Blue"],
-      "Size": ["xl", "l", "m", "s", "xs"]
+      "צבע": ["לבן", "שחור", "כחול"],
+      "מידה": ["גדול", "בינוני", "קטן"]
     }
   },
   {
-    "title": "ZenGarden Mini Indoor Garden",
+    "title": "סקראב לעור",
     "id": 90,
-    "description": "Bring a touch of nature indoors with the ZenGarden Mini Indoor Garden. This compact, self-watering garden is perfect for growing small plants and herbs.",
+    "description": "סקראב לעור רך וחלק",
     "image": "/assets/product9.png",
     "collageImage": [],
     "carouselImage": [],
-    "descriptionBody": "The ZenGarden Mini Indoor Garden is a compact, self-watering garden that brings a touch of nature indoors. Perfect for growing small plants and herbs, it adds a green and serene element to any room.",
+    "descriptionBody": null,
     "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
     "originalPrice": 39.99,
-    "currency": "usd",
+    "currency": "nis",
     "price": 29.99,
     "discount": true,
     "buyingOptions": {
-      "Items": ["Item 1", "Item 2", "Item 3"],
-      "Color": ["White", "Black", "Blue"],
-      "Size": ["xl", "l", "m", "s", "xs"]
+      "צבע": ["לבן", "שחור", "כחול"],
+      "מידה": ["גדול", "בינוני", "קטן"]
     }
   },
   {
-    "title": "ChillMist Ultrasonic Humidifier",
+    "title": "ג'ינס יפה",
     "id": 100,
-    "description": "Maintain optimal humidity levels in your home with the ChillMist Ultrasonic Humidifier. Features a quiet operation and adjustable mist settings.",
+    "description": "ג'ינס יפה לחלוטין",
     "image": "/assets/product10.png",
     "collageImage": [],
     "carouselImage": [],
-    "descriptionBody": "The ChillMist Ultrasonic Humidifier ensures that your home maintains optimal humidity levels. With quiet operation and adjustable mist settings, it creates a comfortable and healthy living environment.",
+    "descriptionBody": null,
     "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
     "originalPrice": 79.99,
-    "currency": "usd",
+    "currency": "nis",
     "price": 59.99,
     "discount": true,
     "buyingOptions": {
-      "Items": ["Item 1", "Item 2", "Item 3"],
-      "Color": ["White", "Black", "Blue"],
-      "Size": ["xl", "l", "m", "s", "xs"]
+      "צבע": ["כחול", "שחור", "אדום"],
+      "מידה": ["גדול", "בינוני", "קטן"]
+    }
+  },
+  {
+    "title": "טייץ יפה",
+    "id": 110,
+    "description": "טייץ יפה לנשים",
+    "image": "/assets/product11.png",
+    "collageImage": [],
+    "carouselImage": [],
+    "descriptionBody": null,
+    "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
+    "originalPrice": 199.99,
+    "currency": "nis",
+    "price": 149.99,
+    "discount": true,
+    "buyingOptions": {
+      "צבע": ["לבן", "שחור", "כחול"],
+      "מידה": ["גדול", "בינוני"]
+    }
+  },
+  {
+    "title": "מגבת יפה",
+    "id": 120,
+    "description": "מגבת יפה למטבח",
+    "image": "/assets/product12.png",
+    "collageImage": [],
+    "carouselImage": [],
+    "descriptionBody": null,
+    "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
+    "originalPrice": 99.99,
+    "currency": "nis",
+    "price": 79.99,
+    "discount": true,
+    "buyingOptions": {
+      "צבע": ["לבן", "שחור", "אדום"],
+      "מידה": ["גדול", "בינוני", "קטן"]
+    }
+  },
+  {
+    "title": "ספסל נוח",
+    "id": 130,
+    "description": "ספסל נוח לגינה",
+    "image": "/assets/product13.png",
+    "collageImage": [],
+    "carouselImage": [],
+    "descriptionBody": null,
+    "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
+    "originalPrice": 59.99,
+    "currency": "nis",
+    "price": 49.99,
+    "discount": true,
+    "buyingOptions": {
+      "צבע": ["כחול", "ירוק", "אדום"],
+      "מידה": ["גדול", "בינוני"]
+    }
+  },
+  {
+    "title": "שמלה יפה",
+    "id": 140,
+    "description": "שמלה יפה לאירועים",
+    "image": "/assets/product14.png",
+    "collageImage": [],
+    "carouselImage": [],
+    "descriptionBody": null,
+    "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
+    "originalPrice": 79.99,
+    "currency": "nis",
+    "price": 64.99,
+    "discount": true,
+    "buyingOptions": {
+      "צבע": ["שחור", "לבן", "אדום"],
+      "מידה": ["גדול", "בינוני", "קטן"]
+    }
+  },
+  {
+    "title": "שרוול נוח",
+    "id": 150,
+    "description": "שרוול נוח לילדים",
+    "image": "/assets/product15.png",
+    "collageImage": [],
+    "carouselImage": [],
+    "descriptionBody": null,
+    "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
+    "originalPrice": 49.99,
+    "currency": "nis",
+    "price": 39.99,
+    "discount": true,
+    "buyingOptions": {
+      "צבע": ["כחול", "ירוק", "אדום"],
+      "מידה": ["גדול", "בינוני"]
+    }
+  },
+  {
+    "title": "סנדל נוח",
+    "id": 160,
+    "description": "סנדל נוח לגברים",
+    "image": "/assets/product16.png",
+    "collageImage": [],
+    "carouselImage": [],
+    "descriptionBody": null,
+    "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
+    "originalPrice": 49.99,
+    "currency": "nis",
+    "price": 39.99,
+    "discount": true,
+    "buyingOptions": {
+      "צבע": ["לבן", "שחור", "כחול"],
+      "מידה": ["גדול", "בינוני", "קטן"]
+    }
+  },
+  {
+    "title": "סנדלי מים נוחים",
+    "id": 170,
+    "description": "סנדלי מים נוחים לילדים",
+    "image": "/assets/product17.png",
+    "collageImage": [],
+    "carouselImage": [],
+    "descriptionBody": null,
+    "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
+    "originalPrice": 79.99,
+    "currency": "nis",
+    "price": 59.99,
+    "discount": true,
+    "buyingOptions": {
+      "צבע": ["כחול", "ירוק", "אדום"],
+      "מידה": ["גדול", "בינוני"]
+    }
+  },
+  {
+    "title": "מברשת טבעית",
+    "id": 180,
+    "description": "מברשת טבעית לשפשוף והסרת לכלוך",
+    "image": "/assets/product18.png",
+    "collageImage": [],
+    "carouselImage": [],
+    "descriptionBody": null,
+    "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
+    "originalPrice": 59.99,
+    "currency": "nis",
+    "price": 44.99,
+    "discount": true,
+    "buyingOptions": {
+      "צבע": ["לבן", "שחור", "כחול"],
+      "מידה": ["גדול", "בינוני", "קטן"]
+    }
+  },
+  {
+    "title": "ספר יפה",
+    "id": 190,
+    "description": "ספר יפה לילדים",
+    "image": "/assets/product19.png",
+    "collageImage": [],
+    "carouselImage": [],
+    "descriptionBody": null,
+    "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
+    "originalPrice": 39.99,
+    "currency": "nis",
+    "price": 29.99,
+    "discount": true,
+    "buyingOptions": {
+      "צבע": ["כחול", "ירוק", "אדום"],
+      "מידה": ["גדול", "בינוני"]
+    }
+  },
+  {
+    "title": "כיסא נוח",
+    "id": 200,
+    "description": "כיסא נוח למשרד",
+    "image": "/assets/product20.png",
+    "collageImage": [],
+    "carouselImage": [],
+    "descriptionBody": null,
+    "video": "https://www.youtube.com/embed/3lh8L6g2tPs",
+    "originalPrice": 79.99,
+    "currency": "nis",
+    "price": 59.99,
+    "discount": true,
+    "buyingOptions": {
+      "צבע": ["שחור", "לבן", "אדום"],
+      "מידה": ["גדול", "בינוני", "קטן"]
     }
   }
 ]
