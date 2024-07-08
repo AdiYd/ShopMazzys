@@ -13,17 +13,24 @@ export const SwiperCarousel = ({children,...props}) => {
   return (
     <div className="swiper-container relative w-full">
       <Swiper
-        className='scroll-my-4 py-4 w-5/6 static'
+        className='scroll-my-4 py-4 w-5/6 static max-sm:w-full max-sm:mx-1'
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={15}
           slidesPerView='auto'
-          navigation = {width>680}
-          pagination={width >680 && {dynamicBullets:false, clickable:true}} 
-          scrollbar={width<=680 && {draggable: true}}
+          navigation = {width>680}  //Arrows
+          pagination={width >680 && {dynamicBullets:false, clickable:true}} //Dots
+          scrollbar={width<=680 && {draggable: true}} //Bar
+          freeMode={true}
+          freeModeMomentum={true}
+          freeModeSticky={true}
+          cssMode={false}
+          resistance={true}
+          resistanceRatio={0.85}
+          speed={600}  // Adjust the speed to make the transition smoother
           loop={true}
           autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
+            delay: 1000,
+            disableOnInteraction: true,
           }}
           {...props}
         >

@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import useWindowDimensions from '../assets/useWindowDimensions';
 import { SwiperCarousel } from '../components/Slider/Slider';
 import { colors } from '@mui/material';
+import { generateImageUrls } from '../components/Collage/Collage';
 
 export const mazzysLogo = ({flowerColor='#F4CBCB',width=200,height=100 , r=10 ,textColor, showText = true, showLogo=true,shadow = false, ...props}={})=>{
   const cx = width / 2;
@@ -25,7 +26,7 @@ export const mazzysLogo = ({flowerColor='#F4CBCB',width=200,height=100 , r=10 ,t
       <circle cx={cx} cy={cy} r={r} fill={'currentColor'}/>
       </g>}
       {showText &&
-      <text color ={textColor || 'currentColor'} className="textLogo text-primary-orange" x={cx + width / 4} y={cy + height / 2}>MAZZY'S</text>}
+      <text color ={textColor || 'currentColor'} className="textLogo text-primary-orange" x={cx + width / 5} y={cy + height / 2}>MAZZY'S</text>}
     </svg>
   );
 }
@@ -56,8 +57,11 @@ const Home = () => {
 export default Home;
 
 
-const HomeContentHeb = ({navigate, width, onSumbitHandler}) => (
-  <div className="pageContainer max-sm:px-0">
+const HomeContentHeb = ({navigate, width, onSumbitHandler}) => {
+  const imageList = generateImageUrls(products.length);
+
+
+  return (<div className="pageContainer max-sm:px-0">
     <header className="text-center mb-8 mt-4 fade-in">
       <div className='flex justify-center'>
       {mazzysLogo({className:'cursor-ponter', shadow: true})}
@@ -76,16 +80,16 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => (
     <section className="mb-12 max-sm:px-2">
       <h2 className="text-2xl font-bold text-primary mb-4">מוצרים נבחרים</h2>
       <div className="flex flex-wrap justify-around justify-items-center gap-4">
-        <div className="grid grid-cols-3 gap-8 max-sm:grid-cols-2 max-sm:gap-2">
+        <div className="grid grid-cols-3 gap-8 max-sm:grid-cols-2 max-sm:gap-1">
           {products.map((item, index) => (
-            item.id < 31 && (
+            item.id < 41 && (
               <ProductCard
                 key={index}
                 buttonText="פרטים נוספים"
                 showPrice={false}
                 onBtnClick={() => { navigate(`מוצרים/${item.title}`); }}
-                imageClass="w-full h-52 mx-auto rounded-t-lg rounded-b-none object-cover"
-                containerClass='width-44 shadow-md rounded-lg'
+                imageClass="w-52 h-52 mx-auto rounded-t-lsm rounded-b-none object-cover"
+                containerClass='width-44 rounded-sm'
                 className="w-4 rounded-t-lg rounded-b-none"
                 showProductCount={false}
                 isSale={true}
@@ -103,11 +107,13 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => (
       <div className="flex relative items-center my-8 justify-around flex-wrap gap-4">
         <div className="w-11/12 mx-auto max-sm:w-full">
           <SwiperCarousel>
-            {products.map((item, index) => (
-              <ProductCard
+            {products.map((item, index) => {
+              item.image = imageList[index];
+              return <ProductCard
                 key={index}
                 buttonText="פרטים נוספים"
                 showPrice={true}
+                imageAsUrl
                 showTitle={false}
                 smallTitle={true}
                 showDescription={false}
@@ -120,7 +126,7 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => (
                 showDiscount={item.id === 20}
                 productData={item}
               />
-            ))}
+            })}
           </SwiperCarousel>
         </div>
       </div>
@@ -128,9 +134,9 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => (
 
     <section className="mb-12 max-sm:px-4">
       <h2 className="sectionTitle">המלצות לקוחות</h2>
-      <SwiperCarousel >
-      {customeRec.map((item, index)=>(
-        <div key={index} className="bg-neutral-50 p-6 w-80 rounded-lg shadow-md">
+      <SwiperCarousel scrollbar={false} pagination >
+      {customeRec.map((item, index)=>
+      (<div key={index} className="bg-neutral-50/50 h-full p-6 w-80 rounded-lg shadow-md">
             <blockquote 
             style={{borderColor: item.borderColor}}
             className="text-neutral-dark italic border-r-4 border-primary pr-4">
@@ -140,15 +146,6 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => (
         </div>
       ))}
       </SwiperCarousel>
-      
-
-{/* 
-      <div className="bg-white p-6 rounded-lg shadow-md mt-4">
-        <blockquote className="text-neutral-dark italic border-r-4 border-primary pr-4">
-          "המוצרים של Mezzys עזרו לי לשפר את מראה העור והאסתטיקה הכללית. פשוט מדהים!"
-        </blockquote>
-        <p className="mt-2 text-left text-neutral-dark">- יוחנן ד.</p>
-      </div> */}
     </section>
 
     <section className="bg-primary/90 text-primary-white fill-primary-white p-6 text-center border rounded-2xl w-4/5 mx-auto max-sm:w-full max-sm:px-4 max-sm:border-none max-sm:rounded-none">
@@ -184,7 +181,8 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => (
       </form>
     </section>
   </div>
-);
+)
+}
 
 
 

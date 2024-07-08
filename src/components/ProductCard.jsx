@@ -3,6 +3,7 @@ import { StyledButton } from './MUI';
 import { Button, IconButton, TextField, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { currDict } from './Item';
+import useWindowDimensions from '../assets/useWindowDimensions';
 
 
 const SaleIcon = (...props) => (
@@ -54,7 +55,7 @@ const ProductCard = ({
   containerClass='',
   cardHeight }) => {
     const [quantity, setQuantity] = useState(1);
-
+    const {width, hight} = useWindowDimensions();
     const handleDecreaseQuantity = () => {
       if (quantity > minQuantity) {
       setQuantity(quantity - 1);
@@ -99,22 +100,22 @@ const ProductCard = ({
       onClick={onClick}
       id='cardImg' 
       src={imageSrc} 
-      style={{width: `${imageWidth}px`, height:imageWidth&&!imageClass ?`${0.8*imageWidth}px`:undefined }}
-      alt={productData.name} className={imageClass} />
+      style={{width: width<300 ? `${width/2-10}px`: `${imageWidth}px`, height:imageWidth&&!imageClass ?`${0.8*imageWidth}px`:undefined }}
+      alt={productData.name} className={`${imageClass}`} />
       </div>
-      <div className='px-4' onClick={onClick}>
+      <div className='px-4 max-xs:px-1' onClick={onClick}>
         {showTitle&&!smallTitle ? 
         <>
-          <p className="font-bold text-primary mb-4 mt-6 max-sm:text-base mx-auto">
+          <p className="font-bold text-primary mb-2 mt-4 max-xs:mt-2 max-sm:text-base mx-auto max-xs:text-xs">
         {productData.title}</p>
-        <hr className='mb-2 mt-0 mx-auto w-2/3 border-b' /></>
-        : smallTitle && <p className='flex w-full my-4 text-sm text-start font-bold'>
+        <hr className='mb-2 mt-0 mx-auto w-2/3 max-xs:hidden border-b' /></>
+        : smallTitle && <p className='flex w-full my-4 max-xs:my-2 max-xs:text-xs text-sm text-start font-bold'>
           {productData.title}
         </p>}
         
         {showDescription &&<p className="text-gray-500 text-sm">{productData.description}</p>}
       </div>
-      {showPrice && <div dir='ltr' onClick={onClick} className="mt-4 mx-auto flex justify-center">
+      {showPrice && <div dir='ltr' onClick={onClick} className="mt-2 mx-auto flex justify-center">
         {(productData.originalPrice && showOldPrice) &&
         <div className="relative w-fit mx-auto max-sm:text-xs">
           {isSale &&  <SaleIcon />}
@@ -124,11 +125,14 @@ const ProductCard = ({
         <p className="font-bold md:text-xl text-red-800 ml-2">{currDict[productData.currency]}{productData.price}</p>
       </div>}
         {(showProductCount && showButton )?  
-              <div dir='ltr' className="flex w-auto mx-4 align-baseline justify-between items-center mt-4">
-                  <Button
-                  variant='contained' color='info'                
-                  sx={{textWrap:'nowrap'}}  
-                  onClick={onClickHandler}  className="btn-primary mx-2">{buttonText}</Button>
+              <div dir='ltr' className="flex w-auto mx-4 align-baseline max-xs:mx-1 justify-between items-center mt-2">
+                 <div className='flex w-auto justify-center'>
+                      <Button
+                      size='small'
+                      variant='contained' color='info'                
+                      sx={{textWrap:'nowrap'}}  
+                      onClick={onClickHandler}  className="btn-primary mx-2">{buttonText}</Button>
+                  </div>
                   <div className="flex w-fit items-center">
                       <IconButton 
                        title='הורדת פריט'
@@ -157,8 +161,9 @@ const ProductCard = ({
                       </IconButton>
                   </div>
              </div> : 
-             <div className='mt-4 mx-4 items-center w-full p0 mb-0'>
+             <div className='mt-2 mx-2 items-center w-auto p-0 mb-0'>
                     <Button
+                    size='small'
                     variant="contained" 
                     color='info'
                     onClick={onClickHandler} 

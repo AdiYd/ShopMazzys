@@ -88,7 +88,7 @@ const Header = () => {
 
   return (
     <>
-    <div id='navbar'>
+    <div className='max-w-full' id='navbar'>
       <AppBar sx={{background:'white',direction:'ltr', color:'#403162'}} position="fixed">
         <Toolbar>
           <Typography sx={{ flexGrow: 1, padding:'0px', margin:'0px' }}>
@@ -101,15 +101,12 @@ const Header = () => {
              item !=='Cart' && <Typography key={index} variant="p">
                 <Link to={PAGES[item]} 
                 onClick={()=>setPage(item)}
-                className={`mx-8 ${page===PAGES[item] ? 'text-primary-orange font-bold':''}`}>
+                className={` text-nowrap mx-8 ${page===PAGES[item] ? 'text-primary-orange font-bold':''}`}>
                 {PAGES[item]==='דף-הבית' ? 'דף הבית' : PAGES[item] || 'דף הבית'}
                 </Link>
               </Typography>
               
             ))}
-          </div>
-          <div className="text-start ml-12 w-full hidden max-sm:block">
-                <h1 style={{fontFamily:'cursive'}}>Mazzys</h1>
           </div>
           <div className='ml-4 mr-2 self-end max-sm:self-center max-sm:mx-8'>
           <Link 
@@ -150,7 +147,9 @@ const Header = () => {
                     <MenuItem variant="button">
                     <Link 
                     onClick={()=>{setPage(item); setAnchorEl(null)}}
-                    to={PAGES[item]} className={`mx-8 font-bold ${page===item ? 'text-primary-orange':''}`}>{item} </Link>
+                    to={PAGES[item]} className={`mx-8 font-bold ${page===item ? 'text-primary-orange':''}`}>
+                     {PAGES[item]==='דף-הבית' ? 'דף הבית' : PAGES[item] || 'דף הבית'}
+                     </Link>
                     </MenuItem>
                 </div>
             ))}
