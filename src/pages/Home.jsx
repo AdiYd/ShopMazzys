@@ -70,21 +70,21 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => {
       <h2 className="mt-4 text-xl">היעד שלך ליופי וטיפוח</h2>
     </header>
 
-    <section className="mb-12 max-sm:px-8">
+    {/* <section className="mb-12 max-sm:px-8">
       <h2 className="text-2xl font-bold text-primary mb-4">המשימה שלנו</h2>
       <p className="text-neutral-dark">
         ב-Mezzys, אנו מחויבים לשפר את רווחתך באמצעות מוצרים חדשניים ליופי ואסתטיקה שמשלבים טכנולוגיה מודרנית עם טכניקות יופי נצחיות. המשימה שלנו היא לעזור לך למצוא רוגע והקלה מהלחצים של חיי היומיום.
       </p>
-    </section>
+    </section> */}
 
-    <section className="mb-12 max-sm:px-2">
+    <section className="mb-12 max-sm:px-2 max-xs:px-0">
       <h2 className="text-2xl font-bold text-primary mb-4">מוצרים נבחרים</h2>
       <div className="flex flex-wrap justify-around justify-items-center gap-4">
         <div className="grid grid-cols-3 gap-8 max-sm:grid-cols-2 max-sm:gap-1">
         {products.map((item, index) => (
              (
               index <102 &&<ProductCard
-                key={index+item.price}
+                key={4+index}
                 buttonText="פרטים נוספים"
                 showPrice={false}
                 onBtnClick={() => { navigate(`מוצרים/${item.title}`); }}
@@ -104,24 +104,25 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => {
     </section>
 
 
-    <section className="mb-12 max-sm:px-8">
+    <section className="mb-12 max-sm:px-4 max-xs:px-2">
       <h2 className="text-2xl font-bold text-primary text-center mb-4">מבצעים והנחות</h2>
       <div className="flex relative items-center my-8 justify-around flex-wrap gap-4">
         <div className="w-11/12 mx-auto max-sm:w-full">
-          <SwiperCarousel>
+          <SwiperCarousel >
             {products.map((item, index) => {
               return <ProductCard
-                key={index+item.image}
+                key={3+index+item.image}
                 buttonText="פרטים נוספים"
                 showPrice={true}
                 imageAsUrl
+                shadow={true}
                 showTitle={false}
                 smallTitle={true}
                 showDescription={false}
                 imageWidth={150}
                 className='h-40'
-                imageClass="w-full h-40 mx-auto rounded-full rounded-b-none object-cover"
-                containerClass='width-44 shadow-md rounded-lg'
+                imageClass="w-full h-40 mx-auto rounded-full rounded-b-md object-cover"
+                containerClass='width-44 rounded-full rounded-b-none'
                 onBtnClick={() => { navigate(`מוצרים/${item.title}`); }}
                 showProductCount={false}
                 isSale={false}
@@ -135,14 +136,14 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => {
     </section>
 
 
-    <section className="mb-12 max-sm:px-8">
+    <section className="mb-12 max-sm:px-4 max-xs:px-1">
       <h2 className="text-2xl font-bold text-primary text-center mb-4">מבצעים והנחות</h2>
       <div className="flex relative items-center my-8 justify-around flex-wrap gap-4">
         <div className="w-11/12 mx-auto max-sm:w-full">
           <SwiperCarousel>
             {products.map((item, index) => {
               return <ProductCard
-                key={index+item.image}
+                key={1+index+item.image}
                 buttonText="פרטים נוספים"
                 showPrice={true}
                 imageAsUrl
@@ -164,11 +165,15 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => {
       </div>
     </section>
 
-    <section className="mb-12 max-sm:px-4">
+    <section className="mb-12 max-sm:px-2">
       <h2 className="sectionTitle">לקוחות ממליצים</h2>
-      <SwiperCarousel scrollbar={false} pagination >
+      <SwiperCarousel 
+      onSlideChange = {(e)=> e?.pagination?.bullets[e.activeIndex]?.style?.setProperty('background',customeRec[e.activeIndex]?.borderColor)}
+      resistanceRatio={0.9}
+      speed={1200}
+      scrollbar={false} pagination >
       {customeRec.map((item, index)=>
-      (<div key={item+index} className="bg-neutral-50/50 h-full p-6 w-80 rounded-lg shadow-md">
+      (<div key={2+item+index} className="bg-neutral-50/50 h-full p-6 w-80 rounded-lg shadow-md">
             <blockquote 
             style={{borderColor: item.borderColor}}
             className="text-neutral-dark italic border-r-4 border-primary pr-4">

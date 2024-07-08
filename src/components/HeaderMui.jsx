@@ -102,7 +102,7 @@ const Header = () => {
                 <Link to={PAGES[item]} 
                 onClick={()=>setPage(item)}
                 className={` text-nowrap mx-8 ${page===PAGES[item] ? 'text-primary-orange font-bold':''}`}>
-                {PAGES[item]==='דף-הבית' ? 'דף הבית' : PAGES[item] || 'דף הבית'}
+                {PAGES[item]==='דף-הבית' ? 'דף הבית' : PAGES[item].replace('-',' ') || 'דף הבית'}
                 </Link>
               </Typography>
               
@@ -148,7 +148,7 @@ const Header = () => {
                     <Link 
                     onClick={()=>{setPage(item); setAnchorEl(null)}}
                     to={PAGES[item]} className={`mx-8 font-bold ${page===item ? 'text-primary-orange':''}`}>
-                     {PAGES[item]==='דף-הבית' ? 'דף הבית' : PAGES[item] || 'דף הבית'}
+                     {PAGES[item]==='דף-הבית' ? 'דף הבית' : PAGES[item].replace('-',' ') || 'דף הבית'}
                      </Link>
                     </MenuItem>
                 </div>

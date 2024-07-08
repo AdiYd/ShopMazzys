@@ -24,7 +24,7 @@ export const SwiperCarousel = ({children,...props}) => {
           freemodemomentum='true'
           freemodesticky='true'
           cssMode={true}
-          resistance={false}
+          resistance={true}
           resistanceRatio={0.5}
           speed={300}  // Adjust the speed to make the transition smoother
           loop={true}
