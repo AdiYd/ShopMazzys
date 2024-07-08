@@ -13,7 +13,7 @@ export const SwiperCarousel = ({children,...props}) => {
   return (
     <div className="swiper-container relative w-full">
       <Swiper
-        className='scroll-my-4 py-4 w-5/6 static max-sm:w-full max-sm:mx-1'
+          className='scroll-my-4 py-4 w-5/6 static max-sm:w-full max-sm:mx-1'
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={15}
           slidesPerView='auto'
@@ -21,12 +21,12 @@ export const SwiperCarousel = ({children,...props}) => {
           pagination={width >680 && {dynamicBullets:false, clickable:true}} //Dots
           scrollbar={width<=680 && {draggable: true}} //Bar
           freeMode={true}
-          freeModeMomentum={true}
-          freeModeSticky={true}
-          cssMode={false}
-          resistance={true}
-          resistanceRatio={0.85}
-          speed={600}  // Adjust the speed to make the transition smoother
+          freemodemomentum='true'
+          freemodesticky='true'
+          cssMode={true}
+          resistance={false}
+          resistanceRatio={0.5}
+          speed={300}  // Adjust the speed to make the transition smoother
           loop={true}
           autoplay={{
             delay: 1000,
@@ -39,26 +39,7 @@ export const SwiperCarousel = ({children,...props}) => {
                 {item}
             </SwiperSlide>
         ))}
-        {/* <SwiperSlide  className='flex justify-center' >
-          <div className='block w-2/3 h-36 bg-purple-200 border'>
-            <h3>Slide 1</h3>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide  className='flex justify-center' >
-          <div className='block w-2/3 h-36 bg-purple-400 border'>
-            <h3>Slide 2</h3>
-          </div>        
-        </SwiperSlide>
-        <SwiperSlide  className='flex justify-center' >
-          <div className='block w-2/3 h-36 bg-purple-600 border'>
-            <h3>Slide 3</h3>
-          </div>        
-        </SwiperSlide>
-        <SwiperSlide  className='flex justify-center' >
-          <div className='block w-2/3 h-36 bg-purple-200 border'>
-            <h3>Slide 4</h3>
-          </div>
-        </SwiperSlide> */}
+
       </Swiper>
     </div>
   );

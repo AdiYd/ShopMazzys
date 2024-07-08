@@ -65,10 +65,10 @@ const CartPage = () => {
     cartItems = <ul className='w-full'>
     {cart.map((item, indx) => (
      <li className=' block p-2 m-2 border-b' key={indx}>
-          <div className='float-right top-4'>
+          <div className='float-left top-4 max-xs:top-2'>
               <img className='w-20 h-20 rounded-2xl border shadow-lg' src={item.image} alt={item.title} />
-              <div className='flex mt-8'>
-                   <p className='text-primary font-bold'>Total: ${(item.pricePerUnit * item.quantity).toFixed(2)}</p>
+              <div className='flex mt-8 max-xs:mt-4 max-xs:mb-2'>
+                   <p className='text-primary font-bold'>סה"כ: ${(item.pricePerUnit * item.quantity).toFixed(2)}</p>
               </div>
           </div>
           <div className='pr-8'>
@@ -83,7 +83,7 @@ const CartPage = () => {
                     ))}
                   </div>
                   <div className='flex items-center gap-2 max-2xs:flex-col max-2xs:items-start'>
-                      <p className='text-primary text-sm font-bold'>Quantity:</p>
+                      <p className='text-primary text-sm font-bold'>כמות:</p>
                       <div className='flex items-center border'>
                             <IconButton 
                             title='הורדת פריט'
@@ -122,16 +122,16 @@ const CartPage = () => {
        </li>
          ))}
                 </ul> 
-     itemSum = <div className=' mx-4 p-4 border rounded-md max-sm:m-2 max-sm:border-none'>
+     itemSum = <div className='mx-4 p-4 border rounded-md max-sm:m-2 max-sm:border-none'>
               <h3 className='text-start text-lg font-bold text-primary my-4'>
-              Total Items: {totalItems}</h3>
+              סה"כ פריטים בסל:  {totalItems}</h3>
               <h3 className='text-start text-lg font-bold text-primary my-4'>
-              Total Price: {currDict[cart[0].currency]}{totalPrice}</h3>
+              מחיר כולל:  {currDict[cart[0].currency]}{totalPrice}</h3>
               <Button
               className='max-sm:text-sm'
               sx={{textWrap:'nowrap'}} 
               variant="contained" color="success">
-                Proceed to Payment
+                לתשלום
               </Button>
                 <div className='my-2 bg-neutral-100/50 max-sm:m-auto'>
                   <AddressForm />
@@ -145,13 +145,13 @@ const CartPage = () => {
   }
 
   let emptyBagSection = <div className='m-3 items-center content-center'>
-                            <p className='mb-6'>Your cart is empty </p>
+                            <p className='mb-6'>הסל שלך ריק </p>
                             <div className='flex justify-center gap-8'>
-                                <Link to={"/Products"}>
-                                  <Button variant='contained' color='info'> Shop</Button>
+                                <Link to={"/מוצרים"}>
+                                  <Button variant='contained' color='info'> לדף המוצרים</Button>
                                 </Link>
-                                <Link to={"/Home"}>
-                                <Button variant='contained' color='secondary'> Home</Button>
+                                <Link to={"/דף-הבית"}>
+                                <Button variant='contained' color='secondary'> לדף הבית</Button>
                                 </Link>
                             </div>
                         </div>
@@ -160,7 +160,7 @@ const CartPage = () => {
 
   return (
    <div className='p-4 items-center text-center max-sm:p-0 max-w-full'>
-      <Typography variant='h4'  className="font-bold text-primary ">Your Cart</Typography>
+      <Typography variant='h4'  className="font-bold text-primary ">סל הקניות</Typography>
       <div className='flex justify-center'>
       {!cart.length ? refBagFull(0) : refBagFull(cart.length)}
       </div>

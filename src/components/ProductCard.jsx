@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { StyledButton } from './MUI';
 import { Button, IconButton, TextField, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { currDict } from './Item';
+import Item, { currDict } from './Item';
 import useWindowDimensions from '../assets/useWindowDimensions';
 
 
@@ -87,6 +87,7 @@ const ProductCard = ({
   onBtnClick(customerRequest)
   }
 
+  // console.log('Item: ', productData);
   let imageSrc = imageAsUrl ? productData.image : process.env.PUBLIC_URL+productData.image;
   return (
     productData && <div 
@@ -115,27 +116,28 @@ const ProductCard = ({
         
         {showDescription &&<p className="text-gray-500 text-sm">{productData.description}</p>}
       </div>
-      {showPrice && <div dir='ltr' onClick={onClick} className="mt-2 mx-auto flex justify-center">
+      {showPrice && <div onClick={onClick} className="mt-2 mx-auto flex justify-center">
         {(productData.originalPrice && showOldPrice) &&
         <div className="relative w-fit mx-auto max-sm:text-xs">
           {isSale &&  <SaleIcon />}
-          <p className="line-through text-sm text-gray-500">
+          <p className="line-through text-xs text-gray-500">
           {productData.originalPrice}</p>
         </div>}
-        <p className="font-bold md:text-xl text-red-800 ml-2">{currDict[productData.currency]}{productData.price}</p>
+        <p className="font-bold text-base text-red-800 mr-2">{currDict[productData.currency]}{productData.price}</p>
       </div>}
         {(showProductCount && showButton )?  
               <div dir='ltr' className="flex w-auto mx-4 align-baseline max-xs:mx-1 justify-between items-center mt-2">
                  <div className='flex w-auto justify-center'>
                       <Button
                       size='small'
-                      variant='contained' color='info'                
-                      sx={{textWrap:'nowrap'}}  
+                      variant='outlined' color='info'                
+                      sx={{textWrap:'nowrap', marginX:'0.7em'}}  
                       onClick={onClickHandler}  className="btn-primary mx-2">{buttonText}</Button>
                   </div>
                   <div className="flex w-fit items-center">
                       <IconButton 
                        title='הורדת פריט'
+                       size='small'
                       onClick={handleDecreaseQuantity} 
                       disabled={quantity <= minQuantity} 
                       sx = {{paddingX:'0.5em'}}
@@ -145,6 +147,7 @@ const ProductCard = ({
                       <TextField
                         type="number"
                         fullWidth={true}
+                        size='small'
                         value={quantity}
                         sx={{width:'fit-content'}}
                         onChange={(e) => setQuantity(Number(e.target.value))}
@@ -153,6 +156,7 @@ const ProductCard = ({
                       />
                       <IconButton 
                        title='הוספת פריט'
+                       size='small'
                       onClick={handleIncreaseQuantity} 
                       disabled={quantity >= maxQuantity} 
                       sx = {{paddingX:'0.5em'}}
@@ -164,10 +168,10 @@ const ProductCard = ({
              <div className='mt-2 mx-2 items-center w-auto p-0 mb-0'>
                     <Button
                     size='small'
-                    variant="contained" 
+                    variant="outlined" 
                     color='info'
                     onClick={onClickHandler} 
-                    sx={{textWrap:'nowrap'}}  
+                    sx={{textWrap:'nowrap', paddingX: '0.7em'}}  
                     className="btn-primary w-2/3 rounded-md self-center mx-auto">{buttonText}</Button>
               </div>
              }

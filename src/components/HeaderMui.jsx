@@ -159,7 +159,7 @@ const Header = () => {
       </AppBar>
       <Offset />
     </div>
-    {(!cartEmpty&& page!=='Cart') && <div title='Checkout'
+    {(!cartEmpty&& page!=='סל-קניות') && <div title='Checkout'
             className='rounded-full bg-white/80 cursor-pointer z-50 shadow-lg hover:shadow-xl border fixed bottom-1/4 right-2 w-fit h-fit'>
             <Link className='cursor-pointer' to={'/סל-קניות'}>
               {refBagFull(cart.length, 'w-16 h-16 max-sm:w-12 max-sm:h-12')}

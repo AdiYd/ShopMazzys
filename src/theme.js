@@ -33,7 +33,7 @@ export const themeFull = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: '6px'
+          borderRadius: '4px'
         },
         containedPrimary: {
           backgroundColor: '#17332A',

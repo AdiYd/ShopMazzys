@@ -10,6 +10,8 @@ import { SwiperCarousel } from '../components/Slider/Slider';
 import { colors } from '@mui/material';
 import { generateImageUrls } from '../components/Collage/Collage';
 
+const imageList = generateImageUrls(products.length);
+
 export const mazzysLogo = ({flowerColor='#F4CBCB',width=200,height=100 , r=10 ,textColor, showText = true, showLogo=true,shadow = false, ...props}={})=>{
   const cx = width / 2;
   const cy = showText ? height / 3 : height/2;
@@ -58,8 +60,6 @@ export default Home;
 
 
 const HomeContentHeb = ({navigate, width, onSumbitHandler}) => {
-  const imageList = generateImageUrls(products.length);
-
 
   return (<div className="pageContainer max-sm:px-0">
     <header className="text-center mb-8 mt-4 fade-in">
@@ -81,20 +81,21 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => {
       <h2 className="text-2xl font-bold text-primary mb-4">מוצרים נבחרים</h2>
       <div className="flex flex-wrap justify-around justify-items-center gap-4">
         <div className="grid grid-cols-3 gap-8 max-sm:grid-cols-2 max-sm:gap-1">
-          {products.map((item, index) => (
-            item.id < 41 && (
-              <ProductCard
-                key={index}
+        {products.map((item, index) => (
+             (
+              index <102 &&<ProductCard
+                key={index+item.price}
                 buttonText="פרטים נוספים"
                 showPrice={false}
                 onBtnClick={() => { navigate(`מוצרים/${item.title}`); }}
                 imageClass="w-52 h-52 mx-auto rounded-t-lsm rounded-b-none object-cover"
                 containerClass='width-44 rounded-sm'
-                className="w-4 rounded-t-lg rounded-b-none"
+                // className="w-4 rounded-t-lg rounded-b-none"
                 showProductCount={false}
                 isSale={true}
+                imageAsUrl
                 showDiscount={item.id === 20}
-                productData={item}
+                productData={{...item, image:imageList[index]}}
               />
             )
           ))}
@@ -102,15 +103,46 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => {
       </div>
     </section>
 
+
     <section className="mb-12 max-sm:px-8">
-      <h2 className="text-2xl font-bold text-primary text-center mb-4">מבצעי הנחות מיוחדים</h2>
+      <h2 className="text-2xl font-bold text-primary text-center mb-4">מבצעים והנחות</h2>
       <div className="flex relative items-center my-8 justify-around flex-wrap gap-4">
         <div className="w-11/12 mx-auto max-sm:w-full">
           <SwiperCarousel>
             {products.map((item, index) => {
-              item.image = imageList[index];
               return <ProductCard
-                key={index}
+                key={index+item.image}
+                buttonText="פרטים נוספים"
+                showPrice={true}
+                imageAsUrl
+                showTitle={false}
+                smallTitle={true}
+                showDescription={false}
+                imageWidth={150}
+                className='h-40'
+                imageClass="w-full h-40 mx-auto rounded-full rounded-b-none object-cover"
+                containerClass='width-44 shadow-md rounded-lg'
+                onBtnClick={() => { navigate(`מוצרים/${item.title}`); }}
+                showProductCount={false}
+                isSale={false}
+                showDiscount={item.id === 20}
+                productData={{...item, image: imageList[index]}}
+              />
+            })}
+          </SwiperCarousel>
+        </div>
+      </div>
+    </section>
+
+
+    <section className="mb-12 max-sm:px-8">
+      <h2 className="text-2xl font-bold text-primary text-center mb-4">מבצעים והנחות</h2>
+      <div className="flex relative items-center my-8 justify-around flex-wrap gap-4">
+        <div className="w-11/12 mx-auto max-sm:w-full">
+          <SwiperCarousel>
+            {products.map((item, index) => {
+              return <ProductCard
+                key={index+item.image}
                 buttonText="פרטים נוספים"
                 showPrice={true}
                 imageAsUrl
@@ -124,7 +156,7 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => {
                 showProductCount={false}
                 isSale={false}
                 showDiscount={item.id === 20}
-                productData={item}
+                productData={{...item, image: imageList[index]}}
               />
             })}
           </SwiperCarousel>
@@ -133,10 +165,10 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => {
     </section>
 
     <section className="mb-12 max-sm:px-4">
-      <h2 className="sectionTitle">המלצות לקוחות</h2>
+      <h2 className="sectionTitle">לקוחות ממליצים</h2>
       <SwiperCarousel scrollbar={false} pagination >
       {customeRec.map((item, index)=>
-      (<div key={index} className="bg-neutral-50/50 h-full p-6 w-80 rounded-lg shadow-md">
+      (<div key={item+index} className="bg-neutral-50/50 h-full p-6 w-80 rounded-lg shadow-md">
             <blockquote 
             style={{borderColor: item.borderColor}}
             className="text-neutral-dark italic border-r-4 border-primary pr-4">
@@ -148,7 +180,7 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => {
       </SwiperCarousel>
     </section>
 
-    <section className="bg-primary/90 text-primary-white fill-primary-white p-6 text-center border rounded-2xl w-4/5 mx-auto max-sm:w-full max-sm:px-4 max-sm:border-none max-sm:rounded-none">
+    <section className="bg-primary/20 text-primary-white fill-primary-white p-6 text-center border rounded-2xl w-4/5 mx-auto max-sm:w-full max-sm:px-4 max-sm:border-none max-sm:rounded-none">
       <div className="items-center justify-center gap-8 mb-8 max-sm:gap-4">
         <FontAwesomeIcon 
          className="shake mb-4 text-orange-400" 
