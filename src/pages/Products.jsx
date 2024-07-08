@@ -16,7 +16,7 @@ const scrollToSection = (targetID = 'itemContainer') => {
   }
 };
 
-const imageList = generateImageUrls(products.length);
+export const imageList = generateImageUrls(products.length);
 
 const Products = ({productName}) => {
   const [product, setProduct] = useState(productName);
@@ -52,15 +52,20 @@ const onAddToCartClick = (customerRequest)=>{
           {products.map((item, index) => (
              (
               index <102 &&<ProductCard
-                key={index+item.price}
+                key={index}
                 buttonText="פרטים נוספים"
-                showPrice={false}
                 onBtnClick={() => { navigate(`מוצרים/${item.title}`); }}
-                imageClass="w-52 h-52 mx-auto rounded-t-lsm rounded-b-none object-cover"
-                containerClass='width-44 rounded-sm'
+                imageClass="w-full h-52 mx-auto rounded-t-lg rounded-b-none object-cover"
+                containerClass='w-11/12 rounded-lg'
                 // className="w-4 rounded-t-lg rounded-b-none"
-                showProductCount={false}
-                isSale={true}
+                showProductCount={true}
+                showDescription
+                showOldPrice
+                border
+                showPrice
+                showTitle
+                isSale = {!(index%3)}
+            
                 imageAsUrl
                 showDiscount={item.id === 20}
                 productData={{...item, image:imageList[index]}}
@@ -70,12 +75,13 @@ const onAddToCartClick = (customerRequest)=>{
         </div>
 
 
-      <div className="p-4 flex gap-x-4 flex-wrap gap-y-8 justify-around max-sm:p-8">
+      <div className="p-4 flex gap-x-4 flex-wrap gap-y-8 justify-around max-sm:p-4 max-xs:px-1">
         {products?.map((product,indx) => {
           return(
           <ProductCard 
           imageAsUrl
-          containerClass='h-auto min-w-64 max-xs:w-5/6'
+          imageClass='mx-auto w-full max-h-56 rounded-t-lg'
+          containerClass='h-auto min-w-64 max-xs:w-11/12'
           onClick={()=>{navigate(`/מוצרים/${product.title}`); setTimeout(()=>{scrollToSection()},200)}}
           shadow
           onBtnClick={onAddToCartClick}

@@ -8,9 +8,8 @@ import { useNavigate } from 'react-router-dom';
 import useWindowDimensions from '../assets/useWindowDimensions';
 import { SwiperCarousel } from '../components/Slider/Slider';
 import { colors } from '@mui/material';
-import { generateImageUrls } from '../components/Collage/Collage';
+import { imageList } from './Products';
 
-const imageList = generateImageUrls(products.length);
 
 export const mazzysLogo = ({flowerColor='#F4CBCB',width=200,height=100 , r=10 ,textColor, showText = true, showLogo=true,shadow = false, ...props}={})=>{
   const cx = width / 2;
@@ -168,9 +167,10 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => {
     <section className="mb-12 max-sm:px-2">
       <h2 className="sectionTitle">לקוחות ממליצים</h2>
       <SwiperCarousel 
+      slidesPerView = {1}
       onSlideChange = {(e)=> e?.pagination?.bullets[e.activeIndex]?.style?.setProperty('background',customeRec[e.activeIndex]?.borderColor)}
-      resistanceRatio={0.9}
-      speed={1200}
+      resistanceRatio={2}
+      speed={1800}
       scrollbar={false} pagination >
       {customeRec.map((item, index)=>
       (<div key={2+item+index} className="bg-neutral-50/50 h-full p-6 w-80 rounded-lg shadow-md">

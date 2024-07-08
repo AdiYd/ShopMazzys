@@ -6,8 +6,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import {  TextField, Checkbox, FormControlLabel, Box, Typography, Button, IconButton, Autocomplete} from '@mui/material';
 import AddressForm from '../components/AddressForm';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
-
+import { faCircleXmark, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { imageList } from './Products';
 
 
 const emptyBag = <svg className="w-24 h-24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="currentColor">
@@ -64,9 +64,12 @@ const CartPage = () => {
     totalPrice = totalPrice.toFixed(2);
     cartItems = <ul className='w-full'>
     {cart.map((item, indx) => (
-     <li className=' block p-2 m-2 border-b' key={indx}>
-          <div className='float-left top-4 max-xs:top-2'>
-              <img className='w-20 h-20 rounded-2xl border shadow-lg' src={item.image} alt={item.title} />
+     <li className='relative block p-2 m-2 pb-4 border-b' key={indx}>
+     <FontAwesomeIcon 
+        onClick={()=>{removeFromCart(item)}}
+       icon={faCircleXmark} title='הסרת פריט' className='absolute top-2 right-2 cursor-pointer' />
+          <div className='float-left top-2 max-xs:top-2'>
+              <img className='w-20 h-20 rounded-2xl border shadow-lg' src={imageList[item.id/10-1]} alt={item.title} />
               <div className='flex mt-8 max-xs:mt-4 max-xs:mb-2'>
                    <p className='text-primary font-bold'>סה"כ: ${(item.pricePerUnit * item.quantity).toFixed(2)}</p>
               </div>
@@ -87,6 +90,7 @@ const CartPage = () => {
                       <div className='flex items-center border'>
                             <IconButton 
                             title='הורדת פריט'
+                            size='small'
                             onClick={(e)=>handleQuantityChange(item, 'remove')} 
                             disabled={item.quantity <= 1} 
                             sx = {{paddingX:'0.5em'}}
@@ -98,6 +102,7 @@ const CartPage = () => {
                                 {item.quantity}
                             </p>
                             <IconButton 
+                            size='small'
                             onClick={(e)=>handleQuantityChange(item, 'add')} 
                               title='הוספת פריט'
                             disabled={item.quantity >= 10} 
@@ -106,7 +111,7 @@ const CartPage = () => {
                               +
                             </IconButton>
                       </div>
-                      <div className=''>
+                      {/* <div className=''>
                       <IconButton
                           onClick={()=>{removeFromCart(item)}}
                           title='הסרת פריט'
@@ -115,7 +120,7 @@ const CartPage = () => {
                           <FontAwesomeIcon 
                           icon={faTrashCan} size='sm' color='inherit' />
                       </IconButton>
-                    </div>
+                    </div> */}
                   </div>
               </div>
           </div>
