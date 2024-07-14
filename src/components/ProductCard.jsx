@@ -51,6 +51,7 @@ const ProductCard = ({
   isSale = false,
   showDiscount = false,
   discountText = 'הנחה',
+  buttonProps,
   imageClass =  defaultImageClass,
   containerClass='',
   cardHeight }) => {
@@ -130,9 +131,9 @@ const ProductCard = ({
                  <div className='flex w-auto justify-center'>
                       <Button
                       size='small'
-                      variant='outlined' color='info'                
+                      variant='outlined' color='success'                
                       sx={{textWrap:'nowrap', marginX:'0.7em'}}  
-                      onClick={onClickHandler}  className="btn-primary mx-2">{buttonText}</Button>
+                      onClick={onClickHandler}  className="btn-primary mx-2" {...buttonProps}>{buttonText}</Button>
                   </div>
                   <div className="flex w-fit items-center">
                       <IconButton 
@@ -169,10 +170,11 @@ const ProductCard = ({
                     <Button
                     size='small'
                     variant="outlined" 
-                    color='info'
+                    color='success'
                     onClick={onClickHandler} 
                     sx={{textWrap:'nowrap', paddingX: '0.7em'}}  
-                    className="btn-primary w-2/3 rounded-md self-center mx-auto">{buttonText}</Button>
+                    className="btn-primary w-2/3 rounded-md self-center mx-auto"
+                    {...buttonProps}>{buttonText}</Button>
               </div>
              }
 

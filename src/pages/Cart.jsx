@@ -71,11 +71,11 @@ const CartPage = () => {
           <div className='float-left top-2 max-xs:top-2'>
               <img className='w-20 h-20 rounded-2xl border shadow-lg' src={imageList[item.id/10-1]} alt={item.title} />
               <div className='flex mt-8 max-xs:mt-4 max-xs:mb-2'>
-                   <p className='text-primary font-bold'>סה"כ: ${(item.pricePerUnit * item.quantity).toFixed(2)}</p>
+                   <p className='text-primary font-bold'>סה"כ: {currDict[item.currency]}{(item.pricePerUnit * item.quantity).toFixed(2)}</p>
               </div>
           </div>
           <div className='pr-8'>
-              <h4 className='text-start text-primary'>{item.title}</h4>
+              <h4 className='text-start text-lg text-primary'>{item.title}</h4>
               <div>
                   <div>
                     {item.options && Object.keys(item.options).map((option, index)=>(

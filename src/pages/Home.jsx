@@ -65,14 +65,14 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => {
       <div className='flex justify-center'>
       {mazzysLogo({className:'cursor-ponter', shadow: true})}
       </div>
-      <h1 className="hidden">Mezzys</h1>
+      <h1 className="hidden">Mazzys</h1>
       <h2 className="mt-4 text-xl">היעד שלך ליופי וטיפוח</h2>
     </header>
 
     {/* <section className="mb-12 max-sm:px-8">
       <h2 className="text-2xl font-bold text-primary mb-4">המשימה שלנו</h2>
       <p className="text-neutral-dark">
-        ב-Mezzys, אנו מחויבים לשפר את רווחתך באמצעות מוצרים חדשניים ליופי ואסתטיקה שמשלבים טכנולוגיה מודרנית עם טכניקות יופי נצחיות. המשימה שלנו היא לעזור לך למצוא רוגע והקלה מהלחצים של חיי היומיום.
+        ב-Mazzys, אנו מחויבים לשפר את רווחתך באמצעות מוצרים חדשניים ליופי ואסתטיקה שמשלבים טכנולוגיה מודרנית עם טכניקות יופי נצחיות. המשימה שלנו היא לעזור לך למצוא רוגע והקלה מהלחצים של חיי היומיום.
       </p>
     </section> */}
 
@@ -83,6 +83,7 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => {
         {products.map((item, index) => (
              (
               index <102 &&<ProductCard
+                buttonProps={{color:'info'}}
                 key={4+index}
                 buttonText="פרטים נוספים"
                 showPrice={false}
@@ -110,6 +111,7 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => {
           <SwiperCarousel >
             {products.map((item, index) => {
               return <ProductCard
+                buttonProps={{color:'secondary'}}
                 key={3+index+item.image}
                 buttonText="פרטים נוספים"
                 showPrice={true}
@@ -142,6 +144,7 @@ const HomeContentHeb = ({navigate, width, onSumbitHandler}) => {
           <SwiperCarousel>
             {products.map((item, index) => {
               return <ProductCard
+                buttonProps={{variant: 'contained', color: 'info'}}
                 key={1+index+item.image}
                 buttonText="פרטים נוספים"
                 showPrice={true}

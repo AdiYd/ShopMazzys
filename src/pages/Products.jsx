@@ -53,8 +53,9 @@ const onAddToCartClick = (customerRequest)=>{
              (
               index <102 &&<ProductCard
                 key={index}
-                buttonText="פרטים נוספים"
-                onBtnClick={() => { navigate(`מוצרים/${item.title}`); }}
+                buttonText="הוספה לעגלה"
+                onBtnClick={onAddToCartClick}
+                onClick={()=>{navigate(`/מוצרים/${product.title}`); setTimeout(()=>{scrollToSection()},200)}}
                 imageClass="w-full h-52 mx-auto rounded-t-lg rounded-b-none object-cover"
                 containerClass='w-11/12 rounded-lg'
                 // className="w-4 rounded-t-lg rounded-b-none"
@@ -64,10 +65,8 @@ const onAddToCartClick = (customerRequest)=>{
                 border
                 showPrice
                 showTitle
-                isSale = {!(index%3)}
-            
                 imageAsUrl
-                showDiscount={item.id === 20}
+                showDiscount={!(index%3)}
                 productData={{...item, image:imageList[index]}}
               />
             )
