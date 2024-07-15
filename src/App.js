@@ -12,6 +12,7 @@ import CartProvider from './context/CartContext';
 import LegalPage from './pages/LegalPage';
 import HeaderMui from './components/HeaderMui';
 import products from './assets/json/productData.json';
+import GoogleAnalytics from './components/GoogleAnalytics/GoogleAnalytics';
 
 export const debug = (...args)=>{
   console.log(...args)
@@ -56,7 +57,8 @@ window.addEventListener('scroll', () => {
 const App = () => {
   return (
     <CartProvider>
-      <Router>
+      <Router basename='/ShopMazzys'>
+        <GoogleAnalytics />
         <HeaderMui />
         <main className="flex-grow relative" style={{minHeight:'75vh'}}>
           <Routes>
